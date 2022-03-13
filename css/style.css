@@ -1,0 +1,117 @@
+/*//////////////////////////// Fonts ////////////////////////////*/
+
+/* Raleway-reg */
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-Regular.eot');
+	src: local('☺'), url('../fonts/Raleway-Regular.woff') format('woff'), url('../fonts/Raleway-Regular.ttf') format('truetype'), url('../fonts/Raleway-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Raleway-bold */
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-Bold.eot');
+	src: local('☺'), url('../fonts/Raleway-Bold.woff') format('woff'), url('../fonts/Raleway-Bold.ttf') format('truetype'), url('../fonts/Raleway-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* Comfortaa-reg */
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa-Regular.eot');
+	src: local('☺'), url('../fonts/Comfortaa-Regular.woff') format('woff'), url('../fonts/Comfortaa-Regular.ttf') format('truetype'), url('../fonts/Comfortaa-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Comfortaa-bold */
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa-Bold.eot');
+	src: local('☺'), url('../fonts/Comfortaa-Bold.woff') format('woff'), url('../fonts/Comfortaa-Bold.ttf') format('truetype'), url('../fonts/Comfortaa-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+
+/*//////////////////////// Style elements null ///////////////////////////////////////*/
+* {padding: 0;margin: 0;border: 0;}
+*,*::before,*::after {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus, :active {outline: none;}
+a:focus, a:active {outline: none;}
+nav,footer,header,aside{display: block;}
+html, body {height: 100%;width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input, textarea, button {font-family: inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1, h2, h3, h4, h5, h6{font-size: inherit;font-weight: 400;}
+
+/* ////////////////////////////////// Styles ///////////////////////////////// */
+
+body {
+    font-family: 'Comfortaa', 'Raleway';
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: #4D4A4A;
+    height: 80px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 0 20px 0 70px;
+}
+
+.logo::before {
+    content: '';
+    background: url(../img/logoico.png) center no-repeat ;
+    background-size: contain;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 17px ;
+    left: 15px;
+   
+}
+
+.menu__item-link, .logo__link {
+    font-size: 20px;
+    color: white;
+}
+
+.menu__item{
+    padding: 0 25px;
+}
+
+.menu__item_dropdown{
+    position: relative;
+}
+
+.menu__item_dropdown::after {
+    content: '';
+    background: url(../img/drop-down-button.svg) center no-repeat;
+    height: 10px;
+    width: 10px;
+    right: -15px;
+    top: 8px;
+    position: absolute;
+}
