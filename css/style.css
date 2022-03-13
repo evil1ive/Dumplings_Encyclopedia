@@ -59,6 +59,10 @@ h1, h2, h3, h4, h5, h6{font-size: inherit;font-weight: 400;}
 
 body {
     font-family: 'Comfortaa', 'Raleway';
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .navbar {
@@ -114,4 +118,15 @@ body {
     right: -15px;
     top: 8px;
     position: absolute;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.footer-wrapper {
+    background-color: #4D4A4A ;
+    height: 100px;
 }
