@@ -65,61 +65,158 @@ body {
     justify-content: space-between;
 }
 
+/* Стилизация навбара */
 .navbar {
+    position:relative;
     display: flex;
+    z-index: 2;
     flex-direction: row;
-    background-color: #4D4A4A;
+    align-items: center;
+    justify-content: space-around;
     height: 80px;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    width: 40%;
 }
 
 .logo {
     display: flex;
+    align-items: center;
+    height: 80px;
     position: relative;
     align-items: center;
-    padding: 0 20px 0 70px;
+    padding: 0 0 0 70px;
+    z-index: 3;
+}
+
+.logo:hover {
+    height: 100%;
+    border-bottom: 3px solid rgb(252, 120, 3);   
+}
+
+.logo:hover .logo__link {
+    color: rgb(252, 120, 3);
 }
 
 .logo::before {
     content: '';
-    background: url(../img/logoico.png) center no-repeat ;
-    background-size: contain;
+    -webkit-mask-size:contain ;
+    -webkit-mask-image: url(../img/logoico.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
     position: absolute;
+    background-color: #fff;
     height: 40px;
     width: 40px;
-    top: 17px ;
     left: 15px;
-   
+}
+
+.logo:hover::before {
+    background-color: rgb(252, 120, 3);
+}
+
+.search-btn{
+    height: 24px;
+    fill: white;
+}
+
+.search-btn:hover{
+    cursor: pointer;
+    fill: rgb(252, 120, 3);
 }
 
 .menu__item-link, .logo__link {
-    font-size: 20px;
+    font-size: 24px;
     color: white;
 }
 
 .menu__item{
-    padding: 0 25px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin: 0 30px 0 0;
+}
+
+.menu__item:hover{
+    margin: 0 30px 0 0;
+    border-bottom: 4px solid rgb(252, 120, 3);
+}
+
+.menu__item:hover .menu__item-link{
+    color: rgb(252, 120, 3);
+}
+
+.menu__item:nth-child(3){
+    margin: 0 200px 0 0;
 }
 
 .menu__item_dropdown{
     position: relative;
 }
 
+.menu__item:hover .menu__item_dropdown::after {
+ background-color: rgb(252, 120, 3);   
+}
+
 .menu__item_dropdown::after {
     content: '';
-    background: url(../img/drop-down-button.svg) center no-repeat;
-    height: 10px;
-    width: 10px;
+    -webkit-mask-size:contain ;
+    -webkit-mask-image: url(../img/drop-down-button.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #fff;
+    height: 13px;
+    width: 13px;
     right: -15px;
-    top: 8px;
+    top: 6px;
     position: absolute;
 }
 
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4D4A4A;
+    z-index: 2;
+}
+
+/* стилизация бургера */
+
+.navbar__burger {
+    display: none;
+}
+
+.navbar__burger-menu {
+    display: none;
+}
+
+.navbar__list {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu__item-link-burger{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* конец навбара */
 .container {
     display: flex;
     flex-direction: column;
@@ -127,19 +224,21 @@ body {
 }
 
 .container__dumplings-navigation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 215px);
+    row-gap: 30px;
+    column-gap: auto;
     width: 100%;
-    padding: 50px 35px;
+    padding: 30px 20px;
     justify-content: center;
 }
 
 .container__dumpling {
     background-color: #C4C4C4;
-    height: 200px;
-    width: 250px;
-    margin: 25px 50px;
+    height: 190px;
+    width: 240px;
+    margin: 25px auto ;
 }
 
 .container__our-taglain {
@@ -147,14 +246,16 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 980px;
     width: 100%;
+    padding: 80px 0 0 0;
+    background: rgb(48,69,2);
+    background: linear-gradient(147deg, rgba(48,69,2,0.989233193277311) 0%, rgba(9,121,63,0.969625350140056) 35%, rgba(9,121,63,0.8883928571428571) 70%, rgba(34,36,0,1) 100%);
 }
 
-h1 {
+.container_taglain{
     font-size: 64px;
     text-transform: uppercase;
-    padding: 20px 0;
     width: 90%;
     text-align: center;
 }
@@ -187,11 +288,104 @@ h2 {
     height: 400px;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .recipe__recipe-block {
     background-color: #C4C4C4;
-    height: 200px;
-    width: 250px;
-    margin: 25px 50px;
+    height: 190px;
+    width: 240px;
+    margin: 25px auto;
 }
+
+@media(max-width:1366px) {
+    .last-modal-elem {
+        display: none;
+    }
+
+    .recipe__recipe-block {
+        height: 175px;
+        width: 225px;
+    }
+
+    .navbar {
+        justify-content: start;
+    }
+
+    .logo {
+        margin: 0 20px 0 0 ;
+    }
+
+    .search{
+        margin: 0 20px 0 auto;
+    }
+    
+} 
+
+@media(max-width:768px) {
+    .navbar {
+        z-index:unset ;
+        height: 50px;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .search { 
+        display: none;
+    }
+    /* Рисуем бургер */
+    .navbar__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+    }
+
+    .navbar__burger span{
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+
+    .navbar__burger::before,
+    .navbar__burger::after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+    
+    .navbar__burger::before {
+        top:0;
+    }
+    
+    .navbar__burger::after {
+        bottom: 0;
+    }
+    /* Нарисовали */
+    /* Наполнение бургера */
+
+    .navbar__burger-menu{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(148, 120, 100);
+        z-index: 1;
+    }
+
+    .logo::before {  
+        height: 34px;
+        width: 34px;
+        left: 15px;
+    }
+} 
