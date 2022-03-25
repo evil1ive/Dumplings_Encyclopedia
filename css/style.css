@@ -89,13 +89,14 @@ body {
     height: 80px;
     position: relative;
     align-items: center;
-    padding: 0 0 0 70px;
+    padding: 0 10px 0 70px;
     z-index: 3;
 }
 
 .logo:hover {
     height: 100%;
-    border-bottom: 3px solid rgb(252, 120, 3);   
+    border-bottom: 4px solid rgb(252, 120, 3);  
+    transition: 0.25s;
 }
 
 .logo:hover .logo__link {
@@ -112,11 +113,18 @@ body {
     background-color: #fff;
     height: 40px;
     width: 40px;
-    left: 15px;
+    left: 20px;
 }
 
 .logo:hover::before {
+    margin: 0 0 -4px 0;
     background-color: rgb(252, 120, 3);
+    transition: 0.25s;
+}
+
+.logo:hover a {
+   margin: 0 0 -4px 0;
+   transition: 0.25s;
 }
 
 .search-btn{
@@ -127,6 +135,7 @@ body {
 .search-btn:hover{
     cursor: pointer;
     fill: rgb(252, 120, 3);
+    transition: 0.25s;
 }
 
 .menu__item-link, .logo__link {
@@ -139,19 +148,23 @@ body {
     display: flex;
     align-items: center;
     margin: 0 30px 0 0;
+    padding:0 5px;
 }
 
 .menu__item:hover{
-    margin: 0 30px 0 0;
     border-bottom: 4px solid rgb(252, 120, 3);
+    transition: 0.25s;
 }
 
 .menu__item:hover .menu__item-link{
     color: rgb(252, 120, 3);
+    margin: 0 0 -4px 0;
+    transition: 0.25s;
 }
 
 .menu__item:nth-child(3){
     margin: 0 200px 0 0;
+    padding:0 15px 0 5px ;
 }
 
 .menu__item_dropdown{
@@ -206,8 +219,7 @@ body {
 }
 
 .navbar__list {
-    display: flex;
-    flex-direction: row;
+    width: 100%;
 }
 
 .menu__item-link-burger{
@@ -217,6 +229,7 @@ body {
 }
 
 /* конец навбара */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -246,12 +259,30 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 980px;
+    height: 100vh;
     width: 100%;
     padding: 80px 0 0 0;
-    background: rgb(48,69,2);
-    background: linear-gradient(147deg, rgba(48,69,2,0.989233193277311) 0%, rgba(9,121,63,0.969625350140056) 35%, rgba(9,121,63,0.8883928571428571) 70%, rgba(34,36,0,1) 100%);
+    animation-duration: 10s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
 }
+
+  
+@keyframes pulse {
+    0% {
+        background: rgb(235, 150, 166);  
+    }
+    30% {
+        background: rgb(255, 241, 133);
+    }
+    70%{
+        background: rgb(127, 155, 184);
+    }
+    100% {
+        background: rgb(235, 150, 166);
+    }
+}
+  
 
 .container_taglain{
     font-size: 64px;
@@ -313,7 +344,7 @@ h2 {
     }
 
     .logo {
-        margin: 0 20px 0 0 ;
+        margin: 0 20px 0 10px ;
     }
 
     .search{
@@ -326,6 +357,7 @@ h2 {
     .navbar {
         z-index:unset ;
         height: 50px;
+        justify-content: space-around;
     }
     
     .menu {
@@ -359,7 +391,7 @@ h2 {
         position: absolute;
         width: 100%;
         height: 2px;
-        left: 0;
+        right: 0px;
     }
     
     .navbar__burger::before {
@@ -369,23 +401,95 @@ h2 {
     .navbar__burger::after {
         bottom: 0;
     }
+
+    .navbar__burger.active:before,
+    .navbar__burger.active:after,
+    .navbar__burger.active span  {
+        transition: 0.3s ease 0s; 
+        background-color: rgb(252, 120, 3);
+    }
+
+    .navbar__burger:before,
+    .navbar__burger:after,
+    .navbar__burger span {
+        transition: 0.3s ease 0s;
+    }
     /* Нарисовали */
     /* Наполнение бургера */
 
+    /* Пишем для бургера с классом active */
+    .navbar__burger.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .navbar__burger.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .navbar__burger.active span {
+        transform: scale(0);
+    }
+
+    .navbar__burger-menu.active {
+        top:0;
+    }
+
+    body.lock{
+        overflow: hidden;
+    }
+
+    /* Конец стилей для активного бургера */
     .navbar__burger-menu{
         display: flex;
         position: fixed;
-        top: 0;
+        top: -100%;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgb(148, 120, 100);
+        overflow: auto;
+        transition: 0.3s ease 0s;
+        background-color: rgb(201, 147, 109);
         z-index: 1;
+        padding: 70px 25px 20px ;
+    }
+
+    /* Настройка внутреностей бургера */
+
+    .navbar__list{
+        display: block;
+    }
+
+    .navbar__list li{
+        margin: 0 0 20px 0;
+        font-size: 24px;
+    }
+
+    .navbar__list a:hover{
+        color: rgb(252, 120, 3);
+        transition: 0.25s;
+    }
+
+    /* конец внутреностей */
+
+    .logo a{   
+        font-size: 18px;
+    }
+
+    .logo{
+        margin: 0 0 0 5px;
+        padding:0 5px 0 35px ;
+        
     }
 
     .logo::before {  
-        height: 34px;
-        width: 34px;
-        left: 15px;
+        height: 30px;
+        width: 30px;
+        left: 0px;
+    }
+
+    .container_taglain{
+        font-size: 34px;
     }
 } 
