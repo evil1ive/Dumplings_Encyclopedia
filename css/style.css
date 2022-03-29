@@ -248,10 +248,10 @@ body {
 }
 
 .container__dumpling {
-    background-color: #C4C4C4;
-    height: 190px;
+    height: 200px;
     width: 240px;
     margin: 25px auto ;
+    position: relative;
 }
 
 .container__our-taglain {
@@ -289,6 +289,7 @@ body {
     text-transform: uppercase;
     width: 90%;
     text-align: center;
+    margin: 0 0 80px 0;
 }
 
 h2 {
@@ -296,10 +297,75 @@ h2 {
     font-weight: 700;
 }
 
-.footer-wrapper {
-    background-color: #4D4A4A ;
-    height: 100px;
+/* Ссылки по сайту */
+.blur-image {
+    height: 100%;
+    width: 100%;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 }
+
+.kurze-link {
+    background: url(../img/link_img/kurze_link.webp) no-repeat center;
+    background-size: cover;
+    
+}
+.pelmeni-link {
+    background: url(../img/link_img/pelmeni_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.vareniki-link {
+
+    background: url(../img/link_img/vareniki_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.wonton-link {
+    background: url(../img/link_img/wonton_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.khinkali-link {
+    background: url(../img/link_img/khinkali-link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.chuchvara-link {
+    background: url(../img/link_img/chuchvara_link.webp) no-repeat center;
+     background-size: cover;
+}
+.dimsam-link {
+    background: url(../img/link_img/dimsam_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.gyoza-link {
+    background: url(../img/link_img/gyoza_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.baozi-link {
+    background: url(../img/link_img/dimsam_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.manti-link {
+    background: url(../img/link_img/manti_link.webp) no-repeat center;
+     background-size: cover;
+}
+
+.container-dimpling__name{
+    position: absolute;
+    background:rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    top: calc(50% - 10px) ;
+}
+/* Конец ссылок по сайту */
 
 .recipe__recipe-name {
     display: flex;
@@ -327,6 +393,38 @@ h2 {
     height: 190px;
     width: 240px;
     margin: 25px auto;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4D4A4A ;
+    height: 200px;
+}
+
+.footer-wrapper__copyright-text{
+    font-size: 15px;   
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-wrapper__date{
+    color:gray;
+    font-size: 19px;
+}
+
+.footer-wrapper__link{
+    height: 30px;
+}
+
+.footer-wrapper__logo{
+    height: 60px;
+}
+
+.footer-wrapper__real-copyright{
+    color:cornflowerblue ;
 }
 
 @media(max-width:1366px) {
@@ -357,7 +455,7 @@ h2 {
     .navbar {
         z-index:unset ;
         height: 50px;
-        justify-content: space-around;
+        
     }
     
     .menu {
@@ -370,10 +468,11 @@ h2 {
     /* Рисуем бургер */
     .navbar__burger {
         display: block;
-        position: relative;
+        position: absolute;
         width: 30px;
         height: 20px;
         z-index: 3;
+        right: 15px;
     }
 
     .navbar__burger span{
@@ -444,6 +543,8 @@ h2 {
     .navbar__burger-menu{
         display: flex;
         position: fixed;
+        flex-direction: column;
+        justify-content: space-between;
         top: -100%;
         left: 0;
         width: 100%;
@@ -478,9 +579,9 @@ h2 {
     }
 
     .logo{
-        margin: 0 0 0 5px;
+        margin: 0 0 0 15px;
         padding:0 5px 0 35px ;
-        
+        height: 50px;
     }
 
     .logo::before {  
@@ -491,5 +592,34 @@ h2 {
 
     .container_taglain{
         font-size: 34px;
+        
     }
+    /* Фичи */
+    .secret-information{
+        margin: 0 0 190px 0;
+        position: relative;
+    }
+
+    .secret-information::after{
+        content: '';
+        -webkit-mask-size:contain ;
+        -webkit-mask-image: url(../img/rabbit_icon.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        background-color: #fff;
+        height: 110px;
+        width: 110px;
+        right:calc(100% - 50% - 55px);
+        top: 20px;
+        position: absolute;
+    }
+
+    .secret-information_text{
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    
 } 
