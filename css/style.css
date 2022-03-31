@@ -272,11 +272,14 @@ body {
     0% {
         background: rgb(235, 150, 166);  
     }
-    30% {
+    25% {
         background: rgb(255, 246, 179);
     }
-    70%{
-        background: rgb(127, 155, 184);
+    50%{
+        background: rgb(179, 255, 236);
+    }
+    75%{
+	background: rgb(127, 155, 184);
     }
     100% {
         background: rgb(235, 150, 166);
