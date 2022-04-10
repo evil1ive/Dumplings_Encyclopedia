@@ -73,7 +73,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 80px;
+    height: 70px;
 }
 
 .menu {
@@ -81,12 +81,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 40%;
+    height: 100%;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 100%;
     position: relative;
     align-items: center;
     padding: 0 10px 0 70px;
@@ -94,7 +95,6 @@ body {
 }
 
 .logo:hover {
-    height: 100%;
     border-bottom: 4px solid rgb(252, 120, 3);  
     transition: 0.25s;
 }
@@ -144,7 +144,7 @@ body {
 }
 
 .menu__item{
-    height: 80px;
+    height: 100%;
     display: flex;
     align-items: center;
     margin: 0 30px 0 0;
@@ -172,7 +172,7 @@ body {
 }
 
 .menu__item:hover .menu__item_dropdown::after {
- background-color: rgb(252, 120, 3);   
+    background-color: rgb(252, 120, 3);   
 }
 
 .menu__item_dropdown::after {
@@ -220,6 +220,7 @@ body {
 
 .navbar__list {
     width: 100%;
+
 }
 
 .menu__item-link-burger{
@@ -236,23 +237,7 @@ body {
     height: 100%;
 }
 
-.container__dumplings-navigation {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 215px);
-    row-gap: 30px;
-    column-gap: auto;
-    width: 100%;
-    padding: 30px 20px;
-    justify-content: center;
-}
-
-.container__dumpling {
-    height: 200px;
-    width: 240px;
-    margin: 25px auto ;
-    position: relative;
-}
+/* Стилизация блока слогана */
 
 .container__our-taglain {
     display: flex;
@@ -279,13 +264,12 @@ body {
         background: rgb(179, 255, 236);
     }
     75%{
-	background: rgb(127, 155, 184);
+	    background: rgb(127, 155, 184);
     }
     100% {
         background: rgb(235, 150, 166);
     }
 }
-  
 
 .container_taglain{
     font-size: 64px;
@@ -299,63 +283,88 @@ h2 {
     font-size: 32px;
     font-weight: 700;
 }
-
+/* Конец стилизации слогана */
 /* Ссылки по сайту */
+
+.container__dumplings-navigation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 215px);
+    row-gap: 25px;
+    width: 100%;
+    padding: 30px 20px;
+    justify-content: center;
+}
+
+.container__dumpling {
+    height: 200px;
+    width: 240px;
+    margin: 15px auto ;
+    position: relative;
+    transition: .2s;
+}
+
+.container__dumpling:hover .blur-image {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+}
+
+.container__dumpling:hover{
+    height: 210px;
+    width: 250px;
+    margin: 10px auto;
+    box-shadow: 0px 0px 20px 1px black;
+    transition: .2s;
+}
+
 .blur-image {
     height: 100%;
     width: 100%;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
+    transition: .5s;
 }
 
 .kurze-link {
     background: url(../img/link_img/kurze_link.webp) no-repeat center;
     background-size: cover;
-    
 }
 .pelmeni-link {
     background: url(../img/link_img/pelmeni_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
-
 .vareniki-link {
 
     background: url(../img/link_img/vareniki_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
-
 .wonton-link {
     background: url(../img/link_img/wonton_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
-
 .khinkali-link {
     background: url(../img/link_img/khinkali-link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
-
 .chuchvara-link {
     background: url(../img/link_img/chuchvara_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
 .dimsam-link {
     background: url(../img/link_img/dimsam_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
-
 .gyoza-link {
     background: url(../img/link_img/gyoza_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
-
 .baozi-link {
-    background: url(../img/link_img/dimsam_link.webp) no-repeat center;
-     background-size: cover;
+    background: url(../img/link_img/baozi_link.webp) no-repeat center;
+    background-size: cover;
 }
-
 .manti-link {
     background: url(../img/link_img/manti_link.webp) no-repeat center;
-     background-size: cover;
+    background-size: cover;
 }
 
 .container-dimpling__name{
@@ -380,23 +389,246 @@ h2 {
     background-color: #fff;
 }
 
-.recipe__recipe-slider {
+.slider-wrapper {
     background-color: darkslategrey;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     height: 400px;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    position: relative;
 }
 
-.recipe__recipe-block {
+.slider-container {
+    margin: 0 30px !important;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+.slider-track {
+    display: flex;
+    transition: .5s linear;
+}
+
+/* спец стиль бесконечность слайдера!!! */
+
+.no-transition {
+    transition: none !important;
+}
+
+/*   */
+
+.container-item {
+    width: 20%;
+    flex-shrink: 0;
+    transition: .5s;
+}
+
+.slider-track__item {
+    position: relative;
     background-color: #C4C4C4;
     height: 190px;
-    width: 240px;
+    max-width: 240px;
     margin: 25px auto;
 }
+
+/* Кнопки слайдера */
+
+.btn-next {
+    background: url(../img/arrow.svg) no-repeat center;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 20px) ;
+    transition: .4s ease;
+}
+
+.btn-prev {
+    background: url(../img/arrow.svg) no-repeat center;
+    transform: rotate(180deg);
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 20px);
+    transition: .4s ease;
+}
+
+@media(max-width:1690px) {
+    .btn-prev,
+    .btn-next{
+        height: 35px;
+        width: 35px;
+    }
+    .btn-next{
+        right:10px;
+    }
+    .btn-prev{
+        left:10px;
+    }
+}
+
+@media(max-width:1460px) {
+    .btn-prev,
+    .btn-next{
+        height: 35px;
+        width: 35spx;
+    }
+    .btn-next{
+        right:5px;
+    }
+    .btn-prev{
+        left:5px;
+    }
+}
+
+@media(max-width:1170px) {
+    .btn-prev,
+    .btn-next{
+        bottom: 30px;
+        top:unset;
+    }
+    .btn-next{
+        right:calc(50% - 50px);
+    }
+    .btn-prev{
+        left:calc(50% - 50px);
+        
+    }
+}
+
+.btn-next:hover,
+.btn-prev:hover {
+    background: url(../img/arrow-hover.svg) no-repeat center;
+}
+
+.btn-input{
+    display: none;
+}
+
+.slider-buttons{
+    z-index: 2;
+}
+
+
+/* Фотки на элементах слайдера */
+
+.item-pelm-apple{background: url(../img/pelmeni/apple.webp) no-repeat center;background-size: cover;}
+.item-pelm-chiken{background: url(../img/pelmeni/chiken.webp) no-repeat center;background-size: cover;}
+.item-pelm-fish{background: url(../img/pelmeni/fish.webp) no-repeat center;background-size: cover;}
+.item-pelm-green-luk{background: url(../img/pelmeni/green-luk.webp) no-repeat center;background-size: cover;}
+.item-pelm-gribi-sirie{background: url(../img/pelmeni/gribi-sirie.webp) no-repeat center;background-size: cover;}
+.item-pelm-carrot{background: url(../img/pelmeni/carrot.webp) no-repeat center;background-size: cover;}
+.item-pelm-gribi-solenie{background: url(../img/pelmeni/gribi-solenie.webp) no-repeat center;background-size: cover;}
+.item-pelm-gribi-sushenie{background: url(../img/pelmeni/gribi-sushenie.webp) no-repeat center;background-size: cover;}
+.item-pelm-kalmar{background: url(../img/pelmeni/kalmar.webp) no-repeat center;background-size: cover;}
+.item-pelm-kapusta{background: url(../img/pelmeni/kapusta.webp) no-repeat center;background-size: cover;}
+.item-pelm-krapiva{background: url(../img/pelmeni/krapiva.webp) no-repeat center;background-size: cover;}
+.item-pelm-krapiva-snitia{background: url(../img/pelmeni/krapiva-snitia-lebeda.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-egg{background: url(../img/pelmeni/meat-egg.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-fish{background: url(../img/pelmeni/meat-fish.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-morkov{background: url(../img/pelmeni/meat-morkov.webp) no-repeat center;background-size: cover;}
+.item-pelm-pistiki{background: url(../img/pelmeni/pistiki.webp) no-repeat center;background-size: cover;}
+.item-pelm-po-taganaiski{background: url(../img/pelmeni/po-taganaiski.webp) no-repeat center;background-size: cover;}
+.item-pelm-potato{background: url(../img/pelmeni/potato.webp) no-repeat center;background-size: cover;}
+.item-pelm-potato-po-menzelinski{background: url(../img/pelmeni/potato-po-menzelinski.webp) no-repeat center;background-size: cover;}
+.item-pelm-po-zlatoustovski{background: url(../img/pelmeni/po-zlatoustovski.webp) no-repeat center;background-size: cover;}
+.item-pelm-redika{background: url(../img/pelmeni/redika.webp) no-repeat center;background-size: cover;}
+.item-pelm-redika-po-shemashinski{background: url(../img/pelmeni/redika-po-shemashinski.webp) no-repeat center;background-size: cover;}
+.item-pelm-repa-meat{background: url(../img/pelmeni/repa-meat.webp) no-repeat center;background-size: cover;}
+.item-pelm-shavel{background: url(../img/pelmeni/shavel.webp) no-repeat center;background-size: cover;}
+.item-pelm-siberian{background: url(../img/pelmeni/siberian.webp) no-repeat center;background-size: cover;}
+.item-pelm-kapusta-po-chinese{background: url(../img/pelmeni/s-kapustoi-po-chinese.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-borovoi{background: url(../img/pelmeni/s-meat-borovoi.webp) no-repeat center;background-size: cover;}
+.item-pelm-svekla-po-kargalinski{background: url(../img/pelmeni/svekla-po-kargalinski.webp) no-repeat center;background-size: cover;}
+.item-pelm-tikva{background: url(../img/pelmeni/tikva.webp) no-repeat center;background-size: cover;}
+.item-pelm-tikva-carrot{background: url(../img/pelmeni/tikva-carrot.webp) no-repeat center;background-size: cover;}
+.item-pelm-uraliski{background: url(../img/pelmeni/uraliski.webp) no-repeat center;background-size: cover;}
+
+.item-chuchvara-tomato {background: url(../img/chuchvara/chuchvara-v-tomate.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-garen {background: url(../img/chuchvara/chuchvara-garen.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-goviad {background: url(../img/chuchvara/chuchvara-s-goviad.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-potato {background: url(../img/chuchvara/chuchvara-s-potato.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-iagni {background: url(../img/chuchvara/chuchvara-s-iagni.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-pig-and-chik {background: url(../img/chuchvara/chuchvara-s-pig-and-chiken.webp) no-repeat center;background-size: cover;}
+
+.item-kurze-baranina{background: url(../img/kurze/baranina.webp) no-repeat center;background-size: cover;}
+.item-kurze-chiken{background: url(../img/kurze/chiken.webp) no-repeat center;background-size: cover;}
+.item-kurze-goviad{background: url(../img/kurze/goviad.webp) no-repeat center;background-size: cover;}
+.item-kurze-krapiva{background: url(../img/kurze/krapiva.webp) no-repeat center;background-size: cover;}
+.item-kurze-krapiva-halta{background: url(../img/kurze/krapiva-i-halta.webp) no-repeat center;background-size: cover;}
+.item-kurze-potato{background: url(../img/kurze/potato.webp) no-repeat center;background-size: cover;}
+
+.item-vareniki-chechevica-shpinat{background: url(../img/vareniki/chechevica-shpinat.webp) no-repeat center;background-size: cover;}
+.item-vareniki-cherry{background: url(../img/vareniki/cherry.webp) no-repeat center;background-size: cover;}
+.item-vareniki-guzuliski{background: url(../img/vareniki/guzuliski.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-tvorogom{background: url(../img/vareniki/s-tvorogom.webp) no-repeat center;background-size: cover;}
+.item-vareniki-tvorog-slivi{background: url(../img/vareniki/tvorog-slivi.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-pavidlom{background: url(../img/vareniki/s-pavidlom.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-nuansom{background: url(../img/vareniki/s-nuansom.webp) no-repeat center;background-size: cover;}
+.item-vareniki-shok-vishnia{background: url(../img/vareniki/shok-vishnia.webp) no-repeat center;background-size: cover;}
+.item-vareniki-shok-tvorog-klubnika{background: url(../img/vareniki/shok-tvorog-klubnika.webp) no-repeat center;background-size: cover;}
+.item-vareniki-pineaple-kukuruza{background: url(../img/vareniki/pineaple-kukuruza.webp) no-repeat center;background-size: cover;}
+.item-vareniki-kefir-dark-smorod{background: url(../img/vareniki/kefir-dark-smorod.webp) no-repeat center;background-size: cover;}
+.item-vareniki-kapusta{background: url(../img/vareniki/kapusta.webp) no-repeat center;background-size: cover;}
+.item-vareniki-cheese-brokoli{background: url(../img/vareniki/cheese-brokoli.webp) no-repeat center;background-size: cover;}
+.item-vareniki-chiken-pecheni{background: url(../img/vareniki/chiken-pecheni.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-tikvoi-potato{background: url(../img/vareniki/s-tikvoi-potato.webp) no-repeat center;background-size: cover;}
+
+.item-wontoni-chiken-and-bacon{background: url(../img/wonton/chiken-and-bacon.webp) no-repeat center;background-size: cover;}
+.item-wontoni-chicken-and-potato{background: url(../img/wonton/chiken-and-potato.webp) no-repeat center;background-size: cover;}
+.item-wontoni-crab{background: url(../img/wonton/crab.webp) no-repeat center;background-size: cover;}
+.item-wontoni-krevetki{background: url(../img/wonton/krevetki.webp) no-repeat center;background-size: cover;}
+.item-wontoni-ovoshi{background: url(../img/wonton/ovoshi.webp) no-repeat center;background-size: cover;}
+.item-wontoni-pig{background: url(../img/wonton/pig.webp) no-repeat center;background-size: cover;}
+
+.item-manti-fish{background: url(../img/manti/fish.webp) no-repeat center;background-size: cover;}
+.item-manti-kapusta-potato{background: url(../img/manti/kapusta-potato-carrot.webp) no-repeat center;background-size: cover;}
+.item-manti-meat-tikva{background: url(../img/manti/meat-tikva.webp) no-repeat center;background-size: cover;}
+.item-manti-tikva{background: url(../img/manti/tikva.webp) no-repeat center;background-size: cover;}
+.item-manti-potato{background: url(../img/manti/potato.webp) no-repeat center;background-size: cover;}
+.item-manti-pig-carrot{background: url(../img/manti/pig-carrot.webp) no-repeat center;background-size: cover;}
+
+.item-khinkali-potato{background: url(../img/khinkali/potato.webp) no-repeat center;background-size: cover;}
+.item-khinkali-tikva{background: url(../img/khinkali/tikva.webp) no-repeat center;background-size: cover;}
+.item-khinkali-potato-cheese{background: url(../img/khinkali/potato-cheese.webp) no-repeat center;background-size: cover;}
+.item-khinkali-kapusta{background: url(../img/khinkali/kapusta.webp) no-repeat center;background-size: cover;}
+.item-khinkali-gribi{background: url(../img/khinkali/gribi.webp) no-repeat center;background-size: cover;}
+.item-khinkali-cheese{background: url(../img/khinkali/cheese.webp) no-repeat center;background-size: cover;}
+
+.item-dimsam-baklagiani{background: url(../img/dimsam/baklagiani.webp) no-repeat center;background-size: cover;}
+.item-dimsam-chicken{background: url(../img/dimsam/chicken.webp) no-repeat center;background-size: cover;}
+.item-dimsam-crystal{background: url(../img/dimsam/crystal.webp) no-repeat center;background-size: cover;}
+.item-dimsam-cucumber-potato{background: url(../img/dimsam/cucumber-potato.webp) no-repeat center;background-size: cover;}
+.item-dimsam-farsh-krevetki{background: url(../img/dimsam/farsh-krevetki.webp) no-repeat center;background-size: cover;}
+.item-dimsam-krevetki{background: url(../img/dimsam/krevetki.webp) no-repeat center;background-size: cover;}
+
+.item-gyoza-gribi{background: url(../img/gyoza/gribi.webp) no-repeat center;background-size: cover;}
+.item-gyoza-on-par{background: url(../img/gyoza/on-par.webp) no-repeat center;background-size: cover;}
+.item-gyoza-lazy{background: url(../img/gyoza/lazy.webp) no-repeat center;background-size: cover;}
+.item-gyoza-tiger-krevetka{background: url(../img/gyoza/tiger-krevetka.webp) no-repeat center;background-size: cover;}
+.item-gyoza-zharenie{background: url(../img/gyoza/zharenie.webp) no-repeat center;background-size: cover;}
+.item-gyoza-vegan{background: url(../img/gyoza/vegan.webp) no-repeat center;background-size: cover;}
+
+.item-baozi-bobi{background: url(../img/baozi/bobi.webp) no-repeat center;background-size: cover;}
+.item-baozi-goviad{background: url(../img/baozi/goviad.webp) no-repeat center;background-size: cover;}
+.item-baozi-kapusta-morkov{background: url(../img/baozi/kapusta-morkov-gribi.webp) no-repeat center;background-size: cover;}
+.item-baozi-morkov{background: url(../img/baozi/morkov.webp) no-repeat center;background-size: cover;}
+.item-baozi-pig{background: url(../img/baozi/pig.webp) no-repeat center;background-size: cover;}
+.item-baozi-fish{background: url(../img/baozi/fish.webp) no-repeat center;background-size: cover;}
+
+.container-item-name {
+    position: absolute;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.8);  
+    padding: 10px 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    top: calc(50% - 10px) ;
+}
+/* Конец стилей слайдера */
 
 .footer-wrapper {
     display: flex;
@@ -408,22 +640,22 @@ h2 {
 }
 
 .footer-wrapper__copyright-text{
-    font-size: 15px;   
+    font-size: 18px;   
     color: #fff;
     text-transform: uppercase;
 }
 
 .footer-wrapper__date{
     color:gray;
-    font-size: 19px;
+    font-size: 21px;
 }
 
 .footer-wrapper__link{
-    height: 30px;
+    height: 40px;
 }
 
 .footer-wrapper__logo{
-    height: 60px;
+    height: 80px;
 }
 
 .footer-wrapper__real-copyright{
@@ -431,17 +663,15 @@ h2 {
 }
 
 @media(max-width:1366px) {
-    .last-modal-elem {
-        display: none;
-    }
-
-    .recipe__recipe-block {
-        height: 175px;
-        width: 225px;
-    }
 
     .navbar {
         justify-content: start;
+        height: 60px;
+    }
+
+    .menu__item-link, .logo__link {
+        font-size: 20px;
+        color: white;
     }
 
     .logo {
@@ -451,14 +681,138 @@ h2 {
     .search{
         margin: 0 20px 0 auto;
     }
+
+    .container-item {
+        width: 25%; 
+    }
+
+    /* Адаптация навигационой панельки */
+
+    .container__dumplings-navigation {
+        row-gap: 15px;
+    }
+
+    .container__dumpling {
+    height: 165px;
+    width: 195px;
+    margin: 15px auto ;
+    position: relative;
+    transition: .2s;
+    }
     
+    .container__dumpling:hover{
+        height: 175px;
+        width: 205px;
+        margin: 10px auto;
+    }
+
+    .container-dimpling__name{
+        font-size: 22px;
+        position: absolute;
+        padding: 10px 0;
+        top: calc(50% - 12px) ;
+    }
+
+    /* Конец адаптации навигации */
+    
+    .slider-container{
+        margin: 0 20px !important;
+    }
 } 
+
+@media(max-width:1090px) {
+
+    .container__dumplings-navigation {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(5, 240px);
+        grid-gap: 15px;
+    }
+
+    .container__dumpling {
+        height: 200px;
+        width: 240px;
+        margin: 15px auto ;
+        position: relative;
+        transition: .2s;
+    }
+    
+    .container__dumpling:hover{
+        height: 210px;
+        width: 250px;
+        margin: 10px auto;
+        box-shadow: 0px 0px 20px 1px black;
+        transition: .2s;
+    }
+
+    .pelmeni-link {
+        grid-column: 2/6;
+        grid-row: 1/2;
+    }
+    .kurze-link {
+        grid-column: 6/10;
+        grid-row: 1/2;
+    }
+    .vareniki-link {
+        grid-column: 2/6;
+        grid-row: 2/3;
+    }
+    .wonton-link {
+        grid-column: 6/10;
+        grid-row: 2/3;
+    }
+    .manti-link {
+        grid-column: 2/6;
+        grid-row: 3/4;
+    }
+    .khinkali-link {
+        grid-column: 6/10;
+        grid-row: 3/4;
+    }
+    .chuchvara-link {
+        grid-column: 2/6;
+        grid-row: 4/5;
+    }
+    .dimsam-link {
+        grid-column: 6/10;
+        grid-row: 4/5;
+    }
+    .gyoza-link {
+        grid-column: 2/6;
+        grid-row: 5/6;
+    }
+    .baozi-link {
+        grid-column: 6/10;
+        grid-row: 5/6;
+    }
+
+}
+
+@media(max-width:992px){
+    .container-item {
+        width: 33%;
+    }
+}
+
+@media(max-width:820px) {
+    .container-item {
+        width: 50%;
+        padding: 4px;
+    }
+
+    .slider-track__item{
+        width: 100%;
+    }
+
+    .slider-container{
+        margin: 0 !important;
+    }
+}
 
 @media(max-width:768px) {
     .navbar {
         z-index:unset ;
         height: 50px;
-        
     }
     
     .menu {
@@ -566,8 +920,13 @@ h2 {
     }
 
     .navbar__list li{
-        margin: 0 0 20px 0;
+        margin: 0 0 30px 0;
         font-size: 24px;
+        text-align: center;
+    }
+
+    .navbar__list:first-child {
+        margin: 30px 0 30px 0;
     }
 
     .navbar__list a:hover{
@@ -619,10 +978,93 @@ h2 {
 
     .secret-information_text{
         color: white;
-        font-size: 18px;
+        font-size: 20px;
         text-decoration: none;
         text-align: center;
     }
 
+    .menu__item-link-burger {
+        font-size: 20px;
+    }
+
+    .footer-wrapper__link{
+        height: 30px;
+    }
+
+    .footer-wrapper__copyright-text{
+        padding: 5px;
+        font-size: 14px;    
+    }
+
+    .footer-wrapper__date{
+        font-size: 15px;
+    }
+    
+    .footer-wrapper__logo-wrapper{
+        display: none;
+    }
+
     
 } 
+@media (max-width:576px) {
+    .container__dumplings-navigation {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(5, 170px);
+        grid-gap: 12px;
+        padding: 30px 0;
+    }
+
+    .container__dumpling {
+        height: 155px;
+        width: 160px;
+        margin: 5px auto;
+    }
+        
+    .container__dumpling:hover{
+        height: 158px;
+        width: 165px;
+        margin: 2.5px auto;
+    }
+
+    .pelmeni-link {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    .kurze-link {
+        grid-column: 6/11;
+        grid-row: 1/2;
+    }
+    .vareniki-link {
+        grid-column: 1/6;
+        grid-row: 2/3;
+    }
+    .wonton-link {
+        grid-column: 6/11;
+        grid-row: 2/3;
+    }
+    .manti-link {
+        grid-column: 1/6;
+        grid-row: 3/4;
+    }
+    .khinkali-link {
+        grid-column: 6/11;
+        grid-row: 3/4;
+    }
+    .chuchvara-link {
+        grid-column: 1/6;
+        grid-row: 4/5;
+    }
+    .dimsam-link {
+        grid-column: 6/11;
+        grid-row: 4/5;
+    }
+    .gyoza-link {
+        grid-column: 1/6;
+        grid-row: 5/6;
+    }
+    .baozi-link {
+        grid-column: 6/11;
+        grid-row: 5/6;
+    }
+}
