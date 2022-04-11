@@ -47,8 +47,8 @@ if(window1366.matches){
             slidesToScroll = 2;
         }
 }else{
-        slidesToShow = 5;
-        slidesToScroll = 5;    
+    slidesToShow = 5;
+    slidesToScroll = 5;    
 }
 
 let itemWidth = containerPelm.clientWidth / slidesToShow;
@@ -62,6 +62,10 @@ window.onresize = () => {
         if(window992.matches){
             slidesToShow = 3;
             slidesToScroll = 3;
+        }
+        if(window820.matches){
+            slidesToShow = 2;
+            slidesToScroll = 2;
         }
     }
     else{
