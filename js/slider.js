@@ -4,6 +4,7 @@ let slidesToShow;
 let slidesToScroll;
 let window1366 = window.matchMedia('(max-width:1366px)');
 let window992 = window.matchMedia('(max-width:992px)');
+let window820 = window.matchMedia('(max-width:820px)');
 
 const containerPelm = document.querySelector('.slider-container-pelm');
 const containerKurze = document.querySelector('.slider-container-kurze');
@@ -41,10 +42,14 @@ if(window1366.matches){
             slidesToShow = 3;
             slidesToScroll = 3;
         }
-    }else{
+        if(window820.matches){
+            slidesToShow = 2;
+            slidesToScroll = 2;
+        }
+}else{
         slidesToShow = 5;
-        slidesToScroll = 5;
-    }
+        slidesToScroll = 5;    
+}
 
 let itemWidth = containerPelm.clientWidth / slidesToShow;
 let movePosition = slidesToScroll*itemWidth;
