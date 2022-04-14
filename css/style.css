@@ -435,7 +435,10 @@ h2 {
 /* Кнопки слайдера */
 
 .btn-next {
-    background: url(../img/arrow.svg) no-repeat center;
+    -webkit-mask-image: url(../img/arrow.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: black;
     height: 40px;
     width: 40px;
     position: absolute;
@@ -445,7 +448,10 @@ h2 {
 }
 
 .btn-prev {
-    background: url(../img/arrow.svg) no-repeat center;
+    -webkit-mask-image: url(../img/arrow.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: black;
     transform: rotate(180deg);
     height: 40px;
     width: 40px;
@@ -500,7 +506,7 @@ h2 {
 
 .btn-next:hover,
 .btn-prev:hover {
-    background: url(../img/arrow-hover.svg) no-repeat center;
+    background-color: #fff;
 }
 
 .btn-input{
