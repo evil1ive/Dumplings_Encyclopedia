@@ -913,7 +913,7 @@ h2 {
         height: 100%;
         overflow: auto;
         transition: 0.3s ease 0s;
-        background-color: rgb(201, 147, 109);
+        background-color: #445c73;
         z-index: 1;
         padding: 70px 25px 20px ;
     }
