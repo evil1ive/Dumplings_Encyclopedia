@@ -425,7 +425,8 @@ h2 {
 }
 
 .slider-track__item {
-    position: relative;
+    display: flex;
+    align-items: center;
     background-color: #C4C4C4;
     height: 190px;
     max-width: 240px;
@@ -625,14 +626,12 @@ h2 {
 .item-baozi-fish{background: url(../img/baozi/fish.webp) no-repeat center;background-size: cover;}
 
 .container-item-name {
-    position: absolute;
     font-size: 22px;
     background-color: rgba(0, 0, 0, 0.8);  
     padding: 10px 0;
     width: 100%;
     color: #fff;
     text-align: center;
-    top: calc(50% - 10px) ;
 }
 /* Конец стилей слайдера */
 
