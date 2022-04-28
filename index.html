@@ -16,12 +16,27 @@
     <header class="header">
         <nav>
             <div class="navbar">
-                <div class="logo"><a href="#" class="logo__link">Энциклопедия пельменей</a></div>
+                <div class="menu-wrapper">
+                <div class="logo"><a href="#taglain" class="logo__link">Энциклопедия пельменей</a></div>
                 <ul class="menu">
-                    <li class="menu__item"><a href="#" class="menu__item-link">Хитрости</a></li>
-                    <li class="menu__item"><a href="#" class="menu__item-link">Связаться</a></li>
-                    <li class="menu__item "><a href="#" class="menu__item-link menu__item_dropdown">Рецепты</a></li>
+                    <li class="menu__item"><a href="/" class="menu__item-link">Хитрости</a></li>
+                    <li class="menu__item"><a href="#sviaz" class="menu__item-link">Связаться</a></li>
+                    <li class="menu__item-dropdownli inactive"><a href="/" class="menu__item_dropdown">Рецепты</a>
+                        <ul class="menu__item-dropdown-list">
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-pelm">Пельмени</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-kurze">Курзе</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-vareniki">Вареники</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-wonton">Вонтоны</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-dimsam">Дим-самы</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-chuchvara">Чучвара</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-manti">Манты</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-khinkali">Хинкали</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-gyoza">Гётзе</a></li>
+                            <li class="menu__item-elem"><a class="dropdown-link" href="#slider-container-baozi">Баоцзы</a></li>
+                        </ul>
+                    </li>
                 </ul>
+                </div>
                 <div class="search"><svg class="search-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>
                 <div class="navbar__burger">
                     <span></span>
@@ -29,16 +44,16 @@
                 <div class="navbar__burger-menu">
                     <ul class="navbar__list">
                         <li>
-                            <a href="#" class="menu__item-link-burger">Главная</a>
+                            <a href="#taglain" class="menu__item-link-burger">Главная</a>
                         </li>
                         <li>
                             <a href="#" class="menu__item-link-burger">Хитрости</a>
                         </li>
                         <li>
-                            <a href="#" class="menu__item-link-burger">Рецепты</a>
+                            <a href="#navigation" class="menu__item-link-burger">Рецепты</a>
                         </li>
                         <li>
-                            <a href="#" class="menu__item-link-burger">Связаться</a>
+                            <a href="#sviaz" class="menu__item-link-burger">Связаться</a>
                         </li>
                     </ul>
                     <div class="secret-information">
@@ -50,67 +65,67 @@
     </header>
     <main>
         <div class="container">
-            <div class="container__our-taglain">
+            <div id="taglain" class="container__our-taglain">
                 <h1 class="container_taglain">Мы вернем человечеству веру в пельмени #Роспельмтрест</h1>
             </div>
-            <div class="container__dumplings-navigation">
+            <div id="navigation" class="container__dumplings-navigation">
                 
                 <div class="container__dumpling pelmeni-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-pelm">
                         <p class="container-dimpling__name" >Пельмени</p>
                     </div>
                 </div>
                 
                 <div class="container__dumpling kurze-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-kurze">
                         <p class="container-dimpling__name" >Курзе</p>
                     </div>
                 </div>
 
                 <div class="container__dumpling vareniki-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-vareniki">
                         <p class="container-dimpling__name" >Вареники</p>
                     </div>
                 </div>
                 
                 <div class="container__dumpling wonton-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-wonton">
                         <p class="container-dimpling__name" >Вонтоны</p>
                     </div>
                 </div>
                 
                 <div class="container__dumpling  manti-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-manti">
                         <p class="container-dimpling__name" >Манты</p>
                     </div>
                 </div>
 
                 <div class="container__dumpling khinkali-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-khinkali">
                         <p class="container-dimpling__name" >Хинкали</p>
                     </div>
                 </div>
 
                 <div class="container__dumpling chuchvara-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-chuchvara">
                         <p class="container-dimpling__name" >Чучвара</p>
                     </div>
                 </div>
 
                 <div class="container__dumpling dimsam-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-dimsam">
                         <p class="container-dimpling__name" >Димсамы</p>
                     </div>
                 </div>
 
                 <div class="container__dumpling gyoza-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-gyoza">
                         <p class="container-dimpling__name" >Гётза</p>
                     </div>
                 </div>
 
                 <div class="container__dumpling baozi-link">
-                    <div class="blur-image">
+                    <div class="blur-image" data-link-addrs="#slider-container-baozi">
                         <p class="container-dimpling__name" >Баоцзы</p>
                     </div>
                 </div>
@@ -120,14 +135,8 @@
                 <div class="recipe">
                     <div class="recipe__recipe-name">
                         <h2>Пельмени</h2>
-                       
-
-
-
-
-
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-pelm" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-pelm" class="btn-next"></label>
                             <input type="radio" id="btn-next-pelm" class="btn-input btn-input-next" >
@@ -135,8 +144,8 @@
                             <input type="radio" id="btn-prev-pelm" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-pelm slider-container">
-                            <div class="container-item"><div class="slider-track__item item-pelm-apple" data-item_name=""><p class="container-item-name">С яблоками</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-chiken" data-item_name=""><p class="container-item-name">С курицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-apple" data-item-name="pelm" data-num="1"><p class="container-item-name">С яблоками</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-chiken" data-item-name="pelm" data-num="2"><p class="container-item-name">С курицей</p></div></div>
                             <div class="container-item"><div class="slider-track__item item-pelm-fish" data-item_name=""><p class="container-item-name">С рыбой</p></div></div>
                             <div class="container-item"><div class="slider-track__item item-pelm-green-luk" data-item_name=""><p class="container-item-name">С зеленым луком</p></div></div>
                             <div class="container-item"><div class="slider-track__item item-pelm-gribi-sirie" data-item_name=""><p class="container-item-name">С сырыми грибами</p></div></div>
@@ -175,7 +184,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Курзе</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-kurze" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-kurze" class="btn-next"></label>
                             <input type="radio" id="btn-next-kurze" class="btn-input btn-input-next" >
@@ -197,7 +206,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Вареники</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-vareniki"  class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-vareniki" class="btn-next"></label>
                             <input type="radio" id="btn-next-vareniki" class="btn-input btn-input-next" >
@@ -228,7 +237,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Вонтоны</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-wonton" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-wonton" class="btn-next"></label>
                             <input type="radio" id="btn-next-wonton" class="btn-input btn-input-next" >
@@ -250,7 +259,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Манты</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-manti" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-manti" class="btn-next"></label>
                             <input type="radio" id="btn-next-manti" class="btn-input btn-input-next" >
@@ -272,7 +281,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Хинкали</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-khinkali" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-khinkali" class="btn-next"></label>
                             <input type="radio" id="btn-next-khinkali" class="btn-input btn-input-next" >
@@ -294,7 +303,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Чучвара</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-chuchvara" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-chuchvara" class="btn-next"></label>
                             <input type="radio" id="btn-next-chuchvara" class="btn-input btn-input-next" >
@@ -316,7 +325,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Дим-самы</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-dimsam" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-dimsam" class="btn-next"></label>
                             <input type="radio" id="btn-next-dimsam" class="btn-input btn-input-next" >
@@ -338,14 +347,14 @@
                     <div class="recipe__recipe-name">
                         <h2>Гётзе</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-gyoza" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-gyoza" class="btn-next"></label>
                             <input type="radio" id="btn-next-gyoza" class="btn-input btn-input-next" >
                             <label for="btn-prev-gyoza" class="btn-prev"></label>
                             <input type="radio" id="btn-prev-gyoza" class="btn-input btn-input-prev">
                         </div>
-                        <div class="slider-container-gyoza slider-container">
+                        <div  class="slider-container-gyoza slider-container">
                             <div class="container-item"><div class="slider-track__item item-gyoza-gribi" data-item_name=""><p class="container-item-name">С грибами</p></div></div>
                             <div class="container-item"><div class="slider-track__item item-gyoza-on-par" data-item_name=""><p class="container-item-name">На пару</p></div></div>
                             <div class="container-item"><div class="slider-track__item item-gyoza-lazy" data-item_name=""><p class="container-item-name">Ленивые</p></div></div>
@@ -360,7 +369,7 @@
                     <div class="recipe__recipe-name">
                         <h2>Баоцзы</h2>
                     </div>
-                    <div class="slider-wrapper">
+                    <div id="slider-container-baozi" class="slider-wrapper">
                         <div class="slider-buttons">
                             <label for="btn-next-baozi" class="btn-next"></label>
                             <input type="radio" id="btn-next-baozi" class="btn-input btn-input-next" >
@@ -408,7 +417,7 @@
         </div>
         
     </main>
-    <footer>
+    <footer id="sviaz">
         <div class="footer-wrapper">
             <div class="footer-wrapper__copyright">
                 <p class="footer-wrapper__copyright-text"><span class="footer-wrapper__real-copyright">&#169</span><span class="footer-wrapper__date">2022</span> Энциклопедия пельменей</p>
@@ -417,14 +426,32 @@
                 <img class="footer-wrapper__logo" src="./img/logoico.svg" alt="Логотип">
             </div>
             <address class="footer-wrapper__our-contacts">
-                <img src="./img/telegram-app.svg" alt="Телеграм" class="footer-wrapper__link">
-                <img src="./img/vk-app.svg" alt="Вконтакте" class="footer-wrapper__link">
-                <img src="./img/gmail.svg" alt="Почта" class="footer-wrapper__link">
+                <a href="https://telegram.me/BoyNextDoor02"><img src="./img/telegram-app.svg" alt="Телеграм" class="footer-wrapper__link"></a>
+                <a href="https://vk.com/spartanets174"><img src="./img/vk-app.svg" alt="Вконтакте" class="footer-wrapper__link"></a>
+                <a href="mailto:Spartanets-2000@mail.ru"><img src="./img/gmail.svg" alt="Почта" class="footer-wrapper__link"></a>
             </address>
         </div>
     </footer>
+
+    <template id="modal-template">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <svg class="modal-close" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path class="modal-close-path" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                  <div class="modal-content__img-name">
+                    
+                  </div>
+                  <div class="modal-content__information">
+
+                  </div>
+            </div>
+        </div>
+    </template>
     
     <script src="./js/burger.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
