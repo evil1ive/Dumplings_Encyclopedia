@@ -37,8 +37,8 @@ sliders.addEventListener('click', (event) => {
             let spanSpace=document.createElement('span');
             let spanIngNum=document.createElement('span');
             let divOneIng=document.createElement('div');
-            spanNameIng = allInfo[dataAttrib.dataset.itemName][dataAttrib.dataset.num][2][z-1];
-            spanIngNum = allInfo[dataAttrib.dataset.itemName][dataAttrib.dataset.num][2][z]
+            spanNameIng.innerText = allInfo[dataAttrib.dataset.itemName][dataAttrib.dataset.num][2][z-1];
+            spanIngNum.innerText = allInfo[dataAttrib.dataset.itemName][dataAttrib.dataset.num][2][z]
             spanSpace.classList.add('span-space');
             divOneIng.classList.add('ingredient-elem')
             divOneIng.append(spanNameIng, spanSpace, spanIngNum,);
