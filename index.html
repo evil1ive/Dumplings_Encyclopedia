@@ -12,14 +12,27 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Энциклопедия пельменей</title>
 </head>
-<body>
+<body class="lock">
+
+    <div id="preloader" class="preloader">
+        <div class="preloader__loader">
+            <div class="loadingio-spinner-rolling-9izsnfva8xm">
+                <div class="ldio-e1xxnbsoso">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.preloader__loader -->
+    </div>
+    <!-- /#preloader.preloader -->
+
     <header class="header">
         <nav>
             <div class="navbar">
                 <div class="menu-wrapper">
                 <div class="logo"><a href="#taglain" class="logo__link">Энциклопедия пельменей</a></div>
                 <ul class="menu">
-                    <li class="menu__item"><a href="/" class="menu__item-link">Хитрости</a></li>
+                    <li class="menu__item"><a href="#tricks" class="menu__item-link">Хитрости</a></li>
                     <li class="menu__item"><a href="#sviaz" class="menu__item-link">Связаться</a></li>
                     <li class="menu__item-dropdownli inactive"><a href="/" class="menu__item_dropdown">Рецепты</a>
                         <ul class="menu__item-dropdown-list">
@@ -37,7 +50,13 @@
                     </li>
                 </ul>
                 </div>
-                <div class="search"><svg class="search-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>
+                
+                <div class="search">
+                    <div class="search-field">
+                        <input class="search-input" type="text">
+                    </div>
+                    <svg class="search-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path class="search-btn-path" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg>
+                </div>
                 <div class="navbar__burger">
                     <span></span>
                 </div>
@@ -47,7 +66,7 @@
                             <a href="#taglain" class="menu__item-link-burger">Главная</a>
                         </li>
                         <li>
-                            <a href="#" class="menu__item-link-burger">Хитрости</a>
+                            <a href="#tricks" class="menu__item-link-burger">Хитрости</a>
                         </li>
                         <li>
                             <a href="#navigation" class="menu__item-link-burger">Рецепты</a>
@@ -146,35 +165,35 @@
                         <div class="slider-container-pelm slider-container">
                             <div class="container-item"><div class="slider-track__item item-pelm-apple" data-item-name="pelm" data-num="1"><p class="container-item-name">С яблоками</p></div></div>
                             <div class="container-item"><div class="slider-track__item item-pelm-chiken" data-item-name="pelm" data-num="2"><p class="container-item-name">С курицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-fish" data-item_name=""><p class="container-item-name">С рыбой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-green-luk" data-item_name=""><p class="container-item-name">С зеленым луком</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-gribi-sirie" data-item_name=""><p class="container-item-name">С сырыми грибами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-carrot" data-item_name=""><p class="container-item-name">С морковью</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-gribi-solenie" data-item_name=""><p class="container-item-name">С солеными грибами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-gribi-sushenie" data-item_name=""><p class="container-item-name">С сушеными грибами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-kalmar" data-item_name=""><p class="container-item-name">С кальмарами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-kapusta" data-item_name=""><p class="container-item-name">С капустой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-krapiva" data-item_name=""><p class="container-item-name">С крапивой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-krapiva-snitia" data-item_name=""><p class="container-item-name">С снытьей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-meat-egg" data-item_name=""><p class="container-item-name">По челябински</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-meat-fish" data-item_name=""><p class="container-item-name">Мясорыбные</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-meat-morkov" data-item_name=""><p class="container-item-name">С морковью</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-pistiki" data-item_name=""><p class="container-item-name">С пистиками</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-po-taganaiski" data-item_name=""><p class="container-item-name">По таганайски</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-potato" data-item_name=""><p class="container-item-name">С картошкой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-potato-po-menzelinski" data-item_name=""><p class="container-item-name">По мензелински</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-po-zlatoustovski" data-item_name=""><p class="container-item-name">По златоустовски</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-redika" data-item_name=""><p class="container-item-name">С редькой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-redika-po-shemashinski" data-item_name=""><p class="container-item-name">По шемахински</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-repa-meat" data-item_name=""><p class="container-item-name">С репой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-shavel" data-item_name=""><p class="container-item-name">С щавелем</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-siberian" data-item_name=""><p class="container-item-name">Сибирские</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-kapusta-po-chinese" data-item_name=""><p class="container-item-name">По китайски</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-meat-borovoi" data-item_name=""><p class="container-item-name">С птицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-svekla-po-kargalinski" data-item_name=""><p class="container-item-name">По каргалински</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-tikva" data-item_name=""><p class="container-item-name">С тыквой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-tikva-carrot" data-item_name=""><p class="container-item-name">Тыкво-морковные</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-pelm-uraliski" data-item_name=""><p class="container-item-name">Уральские</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-fish" data-item-name="pelm" data-num="3"><p class="container-item-name">С рыбой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-green-luk" data-item-name="pelm" data-num="4"><p class="container-item-name">С зеленым луком</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-gribi-sirie" data-item-name="pelm" data-num="5"><p class="container-item-name">С сырыми грибами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-carrot" data-item-name="pelm" data-num="6"><p class="container-item-name">С морковью</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-gribi-solenie" data-item-name="pelm" data-num="7"><p class="container-item-name">С солеными грибами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-gribi-sushenie" data-item-name="pelm" data-num="8"><p class="container-item-name">С сушеными грибами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-kalmar" data-item-name="pelm" data-num="9"><p class="container-item-name">С кальмарами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-kapusta" data-item-name="pelm" data-num="10"><p class="container-item-name">С капустой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-krapiva" data-item-name="pelm" data-num="11"><p class="container-item-name">С крапивой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-krapiva-snitia" data-item-name="pelm" data-num="12"><p class="container-item-name">С снытьей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-meat-egg" data-item-name="pelm" data-num="13"><p class="container-item-name">По челябински</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-meat-fish" data-item-name="pelm" data-num="14"><p class="container-item-name">Мясорыбные</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-meat-morkov" data-item-name="pelm" data-num="15"><p class="container-item-name">С морковью</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-pistiki" data-item-name="pelm" data-num="16"><p class="container-item-name">С пистиками</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-po-taganaiski" data-item-name="pelm" data-num="17"><p class="container-item-name">По таганайски</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-potato" data-item-name="pelm" data-num="18"><p class="container-item-name">С картошкой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-potato-po-menzelinski" data-item-name="pelm" data-num="19"><p class="container-item-name">По мензелински</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-po-zlatoustovski" data-item-name="pelm" data-num="20"><p class="container-item-name">По златоустовски</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-redika" data-item-name="pelm" data-num="21"><p class="container-item-name">С редькой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-redika-po-shemashinski" data-item-name="pelm" data-num="22"><p class="container-item-name">По шемахински</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-repa-meat" data-item-name="pelm" data-num="23"><p class="container-item-name">С репой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-shavel" data-item-name="pelm" data-num="24"><p class="container-item-name">С щавелем</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-siberian" data-item-name="pelm" data-num="25"><p class="container-item-name">Сибирские</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-kapusta-po-chinese" data-item-name="pelm" data-num="26"><p class="container-item-name">По китайски</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-meat-borovoi" data-item-name="pelm" data-num="27"><p class="container-item-name">С птицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-svekla-po-kargalinski" data-item-name="pelm" data-num="28"><p class="container-item-name">По каргалински</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-tikva" data-item-name="pelm" data-num="29"><p class="container-item-name">С тыквой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-tikva-carrot" data-item-name="pelm" data-num="30"><p class="container-item-name">Тыкво-морковные</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-pelm-uraliski" data-item-name="pelm" data-num="31"><p class="container-item-name">Уральские</p></div></div>
                         </div>
                     </div>
                     
@@ -192,12 +211,12 @@
                             <input type="radio" id="btn-prev-kurze" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-kurze slider-container">
-                            <div class="container-item"><div class="slider-track__item item-kurze-baranina" data-item_name=""><p class="container-item-name">С бараниной</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-kurze-chiken" data-item_name=""><p class="container-item-name">С курицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-kurze-goviad" data-item_name=""><p class="container-item-name">С говядиной</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-kurze-krapiva" data-item_name=""><p class="container-item-name">С крапивой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-kurze-krapiva-halta" data-item_name=""><p class="container-item-name">С халтой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-kurze-potato" data-item_name=""><p class="container-item-name">С картошкой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-kurze-baranina" data-item-name="kurze" data-num="1"><p class="container-item-name">С бараниной</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-kurze-chiken" data-item-name="kurze" data-num="2"><p class="container-item-name">С курицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-kurze-goviad" data-item-name="kurze" data-num="3"><p class="container-item-name">С говядиной</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-kurze-krapiva" data-item-name="kurze" data-num="4"><p class="container-item-name">С крапивой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-kurze-krapiva-halta" data-item-name="kurze" data-num="5"><p class="container-item-name">С халтой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-kurze-potato" data-item-name="kurze" data-num="6"><p class="container-item-name">С картошкой</p></div></div>
                         </div>
                     </div>
                 </div>
@@ -214,21 +233,21 @@
                             <input type="radio" id="btn-prev-vareniki" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-vareniki slider-container">
-                            <div class="container-item"><div class="slider-track__item item-vareniki-chechevica-shpinat" data-item_name=""><p class="container-item-name">С чечевицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-cherry" data-item_name=""><p class="container-item-name">С вишней</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-guzuliski" data-item_name=""><p class="container-item-name">Гуцульские</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-s-tvorogom" data-item_name=""><p class="container-item-name">С творогом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-tvorog-slivi" data-item_name=""><p class="container-item-name">Со сливами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-s-pavidlom" data-item_name=""><p class="container-item-name">С повидлом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-s-nuansom" data-item_name=""><p class="container-item-name">С нюансом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-shok-vishnia" data-item_name=""><p class="container-item-name">С шоколадом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-shok-tvorog-klubnika" data-item_name=""><p class="container-item-name">С клубникой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-pineaple-kukuruza" data-item_name=""><p class="container-item-name">С ананасом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-kefir-dark-smorod" data-item_name=""><p class="container-item-name">На кефире</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-kapusta" data-item_name=""><p class="container-item-name">С капустой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-cheese-brokoli" data-item_name=""><p class="container-item-name">С броколи</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-chiken-pecheni" data-item_name=""><p class="container-item-name">С курицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-vareniki-s-tikvoi-potato" data-item_name=""><p class="container-item-name">С тыквой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-chechevica-shpinat" data-item-name="vareniki" data-num="1"><p class="container-item-name">С чечевицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-cherry" data-item-name="vareniki" data-num="2"><p class="container-item-name">С вишней</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-guzuliski" data-item-name="vareniki" data-num="3"><p class="container-item-name">Гуцульские</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-s-tvorogom" data-item-name="vareniki" data-num="4"><p class="container-item-name">С творогом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-tvorog-slivi" data-item-name="vareniki" data-num="5"><p class="container-item-name">Со сливами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-s-pavidlom" data-item-name="vareniki" data-num="6"><p class="container-item-name">С повидлом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-s-nuansom" data-item-name="vareniki" data-num="7"><p class="container-item-name">С нюансом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-shok-vishnia" data-item-name="vareniki" data-num="8"><p class="container-item-name">С шоколадом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-shok-tvorog-klubnika" data-item-name="vareniki" data-num="9"><p class="container-item-name">С клубникой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-pineaple-kukuruza" data-item-name="vareniki" data-num="10"><p class="container-item-name">С абрикосами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-kefir-dark-smorod" data-item-name="vareniki" data-num="11"><p class="container-item-name">На кефире</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-kapusta" data-item-name="vareniki" data-num="12"><p class="container-item-name">С капустой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-cheese-brokoli" data-item-name="vareniki" data-num="13"><p class="container-item-name">С броколи</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-chiken-pecheni" data-item-name="vareniki" data-num="14"><p class="container-item-name">С курицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-vareniki-s-tikvoi-potato" data-item-name="vareniki" data-num="15"><p class="container-item-name">С тыквой</p></div></div>
                         </div>
                     </div>
                     
@@ -245,12 +264,12 @@
                             <input type="radio" id="btn-prev-wonton" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-wonton slider-container">
-                            <div class="container-item"><div class="slider-track__item item-wontoni-chiken-and-bacon" data-item_name=""><p class="container-item-name">С беконом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-wontoni-chicken-and-potato" data-item_name=""><p class="container-item-name">С курицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-wontoni-crab" data-item_name=""><p class="container-item-name">С крабом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-wontoni-krevetki" data-item_name=""><p class="container-item-name">С креветками</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-wontoni-ovoshi" data-item_name=""><p class="container-item-name">С овощами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-wontoni-pig" data-item_name=""><p class="container-item-name">Со свининой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-wontoni-chiken-and-bacon" data-item-name="wonton" data-num="1"><p class="container-item-name">С беконом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-wontoni-chicken-and-potato" data-item-name="wonton" data-num="2"><p class="container-item-name">С курицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-wontoni-crab" data-item-name="wonton" data-num="3"><p class="container-item-name">С крабом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-wontoni-krevetki" data-item-name="wonton" data-num="4"><p class="container-item-name">С креветками</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-wontoni-ovoshi" data-item-name="wonton" data-num="5"><p class="container-item-name">С овощами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-wontoni-pig" data-item-name="wonton" data-num="6"><p class="container-item-name">Со свининой</p></div></div>
                         </div>
                     </div>
                    
@@ -267,12 +286,12 @@
                             <input type="radio" id="btn-prev-manti" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-manti slider-container">
-                            <div class="container-item"><div class="slider-track__item item-manti-fish" data-item_name=""><p class="container-item-name">С рыбой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-manti-kapusta-potato" data-item_name=""><p class="container-item-name">С капустой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-manti-meat-tikva" data-item_name=""><p class="container-item-name">С мясом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-manti-tikva" data-item_name=""><p class="container-item-name">С тыквой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-manti-potato" data-item_name=""><p class="container-item-name">С картошкой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-manti-pig-carrot" data-item_name=""><p class="container-item-name">Со свининой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-manti-fish" data-item-name="manti" data-num="1"><p class="container-item-name">С рыбой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-manti-kapusta-potato" data-item-name="manti" data-num="2"><p class="container-item-name">С капустой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-manti-meat-tikva" data-item-name="manti" data-num="3"><p class="container-item-name">С мясом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-manti-tikva" data-item-name="manti" data-num="4"><p class="container-item-name">С тыквой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-manti-potato" data-item-name="manti" data-num="5"><p class="container-item-name">С картошкой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-manti-pig-carrot" data-item-name="manti" data-num="6"><p class="container-item-name">Со свининой</p></div></div>
                         </div>
                     </div>
                     
@@ -289,12 +308,12 @@
                             <input type="radio" id="btn-prev-khinkali" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-khinkali slider-container">
-                            <div class="container-item"><div class="slider-track__item item-khinkali-potato" data-item_name=""><p class="container-item-name">С картошкой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-khinkali-tikva" data-item_name=""><p class="container-item-name">С тыквой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-khinkali-potato-cheese" data-item_name=""><p class="container-item-name">Картофелесырные</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-khinkali-kapusta" data-item_name=""><p class="container-item-name">С капустой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-khinkali-gribi" data-item_name=""><p class="container-item-name">С грибами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-khinkali-cheese" data-item_name=""><p class="container-item-name">С сыром</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-khinkali-potato" data-item-name="khinkali" data-num="1"><p class="container-item-name">С картошкой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-khinkali-tikva" data-item-name="khinkali" data-num="2"><p class="container-item-name">С тыквой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-khinkali-potato-cheese" data-item-name="khinkali" data-num="3"><p class="container-item-name">Картофелесырные</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-khinkali-kapusta" data-item-name="khinkali" data-num="4"><p class="container-item-name">С капустой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-khinkali-gribi" data-item-name="khinkali" data-num="5"><p class="container-item-name">С грибами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-khinkali-cheese" data-item-name="khinkali" data-num="6khinkali"><p class="container-item-name">С сыром</p></div></div>
                         </div>
                     </div>
                     
@@ -311,12 +330,12 @@
                             <input type="radio" id="btn-prev-chuchvara" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-chuchvara slider-container">
-                            <div class="container-item"><div class="slider-track__item item-chuchvara-tomato" data-item_name=""><p class="container-item-name">В томате</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-chuchvara-garen" data-item_name=""><p class="container-item-name">Жареная</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-chuchvara-goviad" data-item_name=""><p class="container-item-name">С говядиной</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-chuchvara-potato" data-item_name=""><p class="container-item-name">С картошкой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-chuchvara-iagni" data-item_name=""><p class="container-item-name">С ягнятиной</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-chuchvara-pig-and-chik" data-item_name=""><p class="container-item-name">Со свининой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-chuchvara-tomato" data-item-name="chuchvara" data-num="1"><p class="container-item-name">В томате</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-chuchvara-garen" data-item-name="chuchvara" data-num="2"><p class="container-item-name">Жареная</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-chuchvara-goviad" data-item-name="chuchvara" data-num="3"><p class="container-item-name">С говядиной</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-chuchvara-potato" data-item-name="chuchvara" data-num="4"><p class="container-item-name">С картошкой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-chuchvara-iagni" data-item-name="chuchvara" data-num="5"><p class="container-item-name">С ягнятиной</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-chuchvara-pig-and-chik" data-item-name="chuchvara" data-num="6"><p class="container-item-name">Со свининой</p></div></div>
                         </div> 
                     </div>
                     
@@ -333,12 +352,12 @@
                             <input type="radio" id="btn-prev-dimsam" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-dimsam slider-container">
-                            <div class="container-item"><div class="slider-track__item item-dimsam-baklagiani" data-item_name=""><p class="container-item-name">С баклажанами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-dimsam-chicken" data-item_name=""><p class="container-item-name">С курицей</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-dimsam-crystal" data-item_name=""><p class="container-item-name">Кристальные</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-dimsam-cucumber-potato" data-item_name=""><p class="container-item-name">С огурцом</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-dimsam-farsh-krevetki" data-item_name=""><p class="container-item-name">С фаршем</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-dimsam-krevetki" data-item_name=""><p class="container-item-name">С креветками</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-dimsam-baklagiani" data-item-name="dimsam" data-num="1"><p class="container-item-name">С баклажанами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-dimsam-chicken" data-item-name="dimsam" data-num="2"><p class="container-item-name">С курицей</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-dimsam-crystal" data-item-name="dimsam" data-num="3"><p class="container-item-name">Кристальные</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-dimsam-cucumber-potato" data-item-name="dimsam" data-num="4"><p class="container-item-name">С огурцом</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-dimsam-farsh-krevetki" data-item-name="dimsam" data-num="5"><p class="container-item-name">С фаршем</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-dimsam-krevetki" data-item-name="dimsam" data-num="6"><p class="container-item-name">С креветками</p></div></div>
                         </div>
                     </div>
                     
@@ -355,12 +374,12 @@
                             <input type="radio" id="btn-prev-gyoza" class="btn-input btn-input-prev">
                         </div>
                         <div  class="slider-container-gyoza slider-container">
-                            <div class="container-item"><div class="slider-track__item item-gyoza-gribi" data-item_name=""><p class="container-item-name">С грибами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-gyoza-on-par" data-item_name=""><p class="container-item-name">На пару</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-gyoza-lazy" data-item_name=""><p class="container-item-name">Ленивые</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-gyoza-tiger-krevetka" data-item_name=""><p class="container-item-name">С креветками</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-gyoza-zharenie" data-item_name=""><p class="container-item-name">Жареные</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-gyoza-vegan" data-item_name=""><p class="container-item-name">Вегетарианские</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-gyoza-gribi" data-item-name="gyoza" data-num="1"><p class="container-item-name">С грибами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-gyoza-on-par" data-item-name="gyoza" data-num="2"><p class="container-item-name">На пару</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-gyoza-lazy" data-item-name="gyoza" data-num="3"><p class="container-item-name">Ленивые</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-gyoza-tiger-krevetka" data-item-name="gyoza" data-num="4"><p class="container-item-name">С креветками</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-gyoza-zharenie" data-item-name="gyoza" data-num="5"><p class="container-item-name">Жареные</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-gyoza-vegan" data-item-name="gyoza" data-num="6"><p class="container-item-name">Вегетарианские</p></div></div>
                         </div>
                     </div>
                     
@@ -377,41 +396,41 @@
                             <input type="radio" id="btn-prev-baozi" class="btn-input btn-input-prev">
                         </div>
                         <div class="slider-container-baozi slider-container">
-                            <div class="container-item"><div class="slider-track__item item-baozi-bobi" data-item_name=""><p class="container-item-name">С бобами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-baozi-goviad" data-item_name=""><p class="container-item-name">С говядиной</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-baozi-kapusta-morkov" data-item_name=""><p class="container-item-name">С грибами</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-baozi-morkov" data-item_name=""><p class="container-item-name">С морковью</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-baozi-pig" data-item_name=""><p class="container-item-name">Со свининой</p></div></div>
-                            <div class="container-item"><div class="slider-track__item item-baozi-fish" data-item_name=""><p class="container-item-name">С рыбой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-baozi-bobi" data-item-name="baozi" data-num="1"><p class="container-item-name">С бобами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-baozi-goviad" data-item-name="baozi" data-num="2"><p class="container-item-name">С говядиной</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-baozi-kapusta-morkov" data-item-name="baozi" data-num="3"><p class="container-item-name">С грибами</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-baozi-morkov" data-item-name="baozi" data-num="4"><p class="container-item-name">С морковью</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-baozi-pig" data-item-name="baozi" data-num="5"><p class="container-item-name">Со свининой</p></div></div>
+                            <div class="container-item"><div class="slider-track__item item-baozi-fish" data-item-name="baozi" data-num="6"><p class="container-item-name">С рыбой</p></div></div>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            <div class="container-tricks">
+            <div id="tricks" class="container-tricks">
             
                 <div class="container-tricks__item dumplings-tricks">
-    
+                    <p>Для того чтобы пельмени получались очень сочными следует использовать сразу два вида мяся для фарша - свинину и говядину. В процентном соотношении свинины следует брать больше</p>
                 </div>
                 
                 <div class="container-tricks__item dumplings-tricks">
-    
+                    <p>Чтобы жареные пельмени были мягкими а начинка горячей их не стоит высыпать на сковороду в замороженном виде, перед тем как их жарить их стоит сварить так они не только будут мягкими но и начинка будет горячей</p>
                 </div>
                 
                 <div class="container-tricks__item dumplings-tricks">
-    
+                    <p>Также если пельмени сварить по какой-то причине не возможно то их "жарку" следует превратить в тушение. В сковородку необходимо добавить немного воды и накрыть их крышкой и уменьшить огонь до минимума </p>
                 </div>
                 
                 <div class="container-tricks__item dumplings-tricks">
-    
+                    <p>Во время приготовления пелменей не бойтесь эксперементировать. Так, смело добавляйте в фарш любую зелень и ароматные травы. Варить же пельмени можно также на бульоне с специями для супа</p>
                 </div>
                 
                 <div class="container-tricks__item dumplings-tricks">
-    
+                    <p>Если вы сталкивайтесь с тем что пельмени прилипают ко дну кастрюли или же склеиваються во время варки, то просто добавьте столовую ложку любого растительного масла</p>
                 </div>
                 
                 <div class="container-tricks__item dumplings-tricks">
-    
+                    <p>Если вы хотите чтобы лук давал лишь оттенок вкуса, то его стоит пропустить через мясорубку в момент приготовления фарша. А также пельмени лучше всего подавать вместе со сметаной и зеленью</p>
                 </div>
             </div>
         </div>
@@ -420,7 +439,7 @@
     <footer id="sviaz">
         <div class="footer-wrapper">
             <div class="footer-wrapper__copyright">
-                <p class="footer-wrapper__copyright-text"><span class="footer-wrapper__real-copyright">&#169</span><span class="footer-wrapper__date">2022</span> Энциклопедия пельменей</p>
+                <p class="footer-wrapper__copyright-text"><span class="footer-wrapper__real-copyright">&#169 </span><span class="footer-wrapper__date">2022</span> Энциклопедия пельменей</p>
             </div>
             <div class="footer-wrapper__logo-wrapper">
                 <img class="footer-wrapper__logo" src="./img/logoico.svg" alt="Логотип">
@@ -448,10 +467,15 @@
             </div>
         </div>
     </template>
+
+    <template>
+        
+    </template>
     
     <script src="./js/burger.js"></script>
     <script src="./js/slider.js"></script>
     <script src="./js/dropdown.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/preloader.js"></script>
 </body>
 </html>
