@@ -1,4 +1,4 @@
-// ууууааааууууаааауууу май лайф би лайк
+// Рассчеты
 let position = 0;
 let slidesToShow;
 let slidesToScroll;
@@ -6,6 +6,7 @@ let window1366 = window.matchMedia('(max-width:1366px)');
 let window992 = window.matchMedia('(max-width:992px)');
 let window820 = window.matchMedia('(max-width:820px)');
 
+// Сами слайдеры
 const containerPelm = document.querySelector('.slider-container-pelm');
 const containerKurze = document.querySelector('.slider-container-kurze');
 const containerVareniki = document.querySelector('.slider-container-vareniki');
@@ -17,6 +18,7 @@ const containerDimsam = document.querySelector('.slider-container-dimsam');
 const containerGyoza = document.querySelector('.slider-container-gyoza');
 const containerBaozi = document.querySelector('.slider-container-baozi');
 
+// Наполнение слайдеров
 const itemsPelm = containerPelm.querySelectorAll('.container-item');
 const itemsKurze = containerKurze.querySelectorAll('.container-item');
 const itemsVareniki = containerVareniki.querySelectorAll('.container-item');
@@ -34,6 +36,7 @@ containerManti,containerKhinkali,containerChuchvara,containerDimsam,containerGyo
 const massOfitems=[itemsPelm, itemsKurze, itemsVareniki, itemsWonton, itemsManti,
 itemsKhinkali, itemsChuchvara, itemsDimsam, itemsGyoza, itemsBaozi];
 
+// Количество элементов в ряд при загрузке
 const checkBtn = document.querySelector('.container-all-sliders');
 if(window1366.matches){
         slidesToShow = 4;
@@ -51,10 +54,11 @@ if(window1366.matches){
     slidesToScroll = 5;    
 }
 
+// Рассчет на сколько сдвигать 
 let itemWidth = containerPelm.clientWidth / slidesToShow;
 let movePosition = slidesToScroll*itemWidth;
     
-
+// Рассчеты при изменении экрана
 window.onresize = () => {
     if(window1366.matches){
         slidesToShow = 4;
@@ -78,124 +82,146 @@ window.onresize = () => {
     
 };
 
-    
+// Функция задержки
+function debounce(f,ms){
+    let isCooldown = false;
 
+    return function() {
+        if(isCooldown) return;
+        f.apply(this);
+        isCooldown=true;
+        setTimeout(()=> isCooldown=false,ms);
+    }
+}
 
+// Номер элементов что будем двигать
+let index;
+//
 
+let debPrSh = debounce(slidePrevShort, 550);
+let debNxSh = debounce(slideNextShort, 550);
+let debPrlg = debounce(slidePrevLong, 550);
+let debNxlg = debounce(slideNextLong, 550);
+
+// Событие перелистывания
 checkBtn.addEventListener('click', (event)=> {
     
         if(event.target.classList.contains('btn-input-prev')){
             if(event.target.id=='btn-prev-pelm'){
-                position-=movePosition;
-                setPosition(2,massOfitems[0], massOfcontainers[0]);
-                setTimeout(()=>{setPosition(0, massOfitems[0], massOfcontainers[0]);},100);
-                
+                index=0;
+                debPrlg();
             }
             if(event.target.id=='btn-prev-kurze'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[1], massOfcontainers[1]);
-                setTimeout(()=>{setPosition(0, massOfitems[1], massOfcontainers[1]);},100);
+                index=1;
+                debPrSh();
             }
             if(event.target.id=='btn-prev-vareniki'){
-                position-=movePosition;
-                setPosition(2,massOfitems[2], massOfcontainers[2]);
-                setTimeout(()=>{setPosition(0, massOfitems[2], massOfcontainers[2]);},100);
+                index=2;
+                debPrlg();
             }
             if(event.target.id=='btn-prev-wonton'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[3], massOfcontainers[3]);
-                setTimeout(()=>{setPosition(0, massOfitems[3], massOfcontainers[3]);},100);
+                index=3;
+                debPrSh();
             }
             if(event.target.id=='btn-prev-manti'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[4], massOfcontainers[4]);
-                setTimeout(()=>{setPosition(0, massOfitems[4], massOfcontainers[4]);},100);
+                index=4;
+                debPrSh();
             }
             if(event.target.id=='btn-prev-khinkali'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[5], massOfcontainers[5]);
-                setTimeout(()=>{setPosition(0, massOfitems[5], massOfcontainers[5]);},100);
+                index=5;
+                debPrSh();
             }
             if(event.target.id=='btn-prev-chuchvara'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[6], massOfcontainers[6]);
-                setTimeout(()=>{setPosition(0, massOfitems[6], massOfcontainers[6]);},100);
+                index=6;
+                debPrSh();
             }
             if(event.target.id=='btn-prev-dimsam'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[7], massOfcontainers[7]);
-                setTimeout(()=>{setPosition(0, massOfitems[7], massOfcontainers[7]);},100);
+                index=7;
+                debPrSh();;
             }
             if(event.target.id=='btn-prev-gyoza'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[8], massOfcontainers[8]);
-                setTimeout(()=>{setPosition(0, massOfitems[8], massOfcontainers[8]);},100);
+                index=8;
+                debPrSh();
             }
             if(event.target.id=='btn-prev-baozi'){
-                position-=movePosition/slidesToScroll;
-                setPosition(2,massOfitems[9], massOfcontainers[9]);
-                setTimeout(()=>{setPosition(0, massOfitems[9], massOfcontainers[9]);},100);
+                index=9;
+                debPrSh();
             }
         }
         else{
-            
             if(event.target.id=='btn-next-pelm'){
-                position-=movePosition;
-                setPosition( -1, massOfitems[0], massOfcontainers[0]);
-                setTimeout(()=>{setPosition(1, massOfitems[0], massOfcontainers[0]);},500);
+                index = 0;
+                debNxlg();
             }
             if(event.target.id=='btn-next-kurze'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[1], massOfcontainers[1]);
-                setTimeout(()=>{setPosition(1, massOfitems[1], massOfcontainers[1]);},500);
+                index = 1;
+                debNxSh();
             }
             if(event.target.id=='btn-next-vareniki'){
-                position-=movePosition;
-                setPosition( -1, massOfitems[2], massOfcontainers[2]);
-                setTimeout(()=>{setPosition(1, massOfitems[2], massOfcontainers[2]);},500);
+                index = 2;
+                debNxlg();
             }
             if(event.target.id=='btn-next-wonton'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[3], massOfcontainers[3]);
-                setTimeout(()=>{setPosition(1, massOfitems[3], massOfcontainers[3]);},500);
+                index = 3;
+                debNxSh();
             }
             if(event.target.id=='btn-next-manti'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[4], massOfcontainers[4]);
-                setTimeout(()=>{setPosition(1, massOfitems[4], massOfcontainers[4]);},500);
+                index = 4;
+                debNxSh();
             }
             if(event.target.id=='btn-next-khinkali'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[5], massOfcontainers[5]);
-                setTimeout(()=>{setPosition(1, massOfitems[5], massOfcontainers[5]);},500);
+                index = 5;
+                debNxSh();
             }
             if(event.target.id=='btn-next-chuchvara'){
-                position-=movePosition/slidesToScroll;
-                setPosition(-1, massOfitems[6], massOfcontainers[6]);
-                setTimeout(()=>{setPosition(1, massOfitems[6], massOfcontainers[6]);},500);
+                index = 6;
+                debNxSh();
             }
             if(event.target.id=='btn-next-dimsam'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[7], massOfcontainers[7]);
-                setTimeout(()=>{setPosition(1, massOfitems[7], massOfcontainers[7]);},500);
+                index = 7;
+                debNxSh();
             }
             if(event.target.id=='btn-next-gyoza'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[8], massOfcontainers[8]);
-                setTimeout(()=>{setPosition(1, massOfitems[8], massOfcontainers[8]);},500);
+                index = 8;
+                debNxSh();
             }
             if(event.target.id=='btn-next-baozi'){
-                position-=movePosition/slidesToScroll;
-                setPosition( -1, massOfitems[9], massOfcontainers[9]);
-                setTimeout(()=>{setPosition(1, massOfitems[9], massOfcontainers[9]);},500);
+                index = 9;
+                debNxSh();
             }
 
         }
 });
+//
+
+// Функции для debounce
+function slidePrevShort(){
+    position-=movePosition/slidesToScroll;
+    setPosition(2,massOfitems[index], massOfcontainers[index]);
+    setTimeout(()=>{setPosition(0, massOfitems[index], massOfcontainers[index]);},100);
+}
+
+function slideNextShort() {
+    position-=movePosition/slidesToScroll;
+    setPosition( -1, massOfitems[index], massOfcontainers[index]);
+    setTimeout(()=>{setPosition(1, massOfitems[index], massOfcontainers[index]);},500);
+}
+
+function slidePrevLong(){
+    position-=movePosition;
+    setPosition(2,massOfitems[index], massOfcontainers[index]);
+    setTimeout(()=>{setPosition(0, massOfitems[index], massOfcontainers[index]);},100);
+}
+
+function slideNextLong() {
+    position-=movePosition;
+    setPosition( -1, massOfitems[index], massOfcontainers[index]);
+    setTimeout(()=>{setPosition(1, massOfitems[index], massOfcontainers[index]);},500);
+}
+//
 
 
-
-
+// Изменение позициии в слайдерах
 function setPosition(addtrs, items, container) {
     let i=position;
     
@@ -221,7 +247,7 @@ function setPosition(addtrs, items, container) {
         }
         else{
             if(addtrs===0) {
-                position = 0
+                position = 0;
                 item.classList.remove('no-transition');
                 item.style.transform = `translateX(${position}px)`;
             }else {
@@ -229,5 +255,5 @@ function setPosition(addtrs, items, container) {
                 item.style.transform = `translateX(${position}px)`;
             }
         }
-    })
+    });
 }

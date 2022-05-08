@@ -12,7 +12,7 @@ open();
 
 
 const modalTemplate = document.getElementById('modal-template').content;
-const sliders = document.querySelector('.slider-wrapper');
+const sliders = document.querySelector('.container-all-sliders');
 const bodyM = document.querySelector('body');
 let modalElem=modalTemplate.cloneNode(true);
 let i=0;
@@ -96,13 +96,27 @@ sliders.addEventListener('click', (event) => {
     }
 });
 
+document.addEventListener('keyup', (event) => {
+    if(event.code=='Escape' && bodyM.classList.contains('lock')){
+        document.querySelector('.modal-wrapper').classList.add('modalClose');
+        setTimeout(()=>closeModal(document.querySelector('.modal-wrapper')),800);
+    }
+})
+
 bodyM.addEventListener('click', (event) => {
     if(event.target.classList.contains('modal-close')){
-        event.target.parentNode.parentNode.remove();
-        bodyM.classList.remove('lock');
+        document.querySelector('.modal-wrapper').classList.add('modalClose');
+        setTimeout(() => closeModal(event.target.parentNode.parentNode),800);
+        
     }
     if(event.target.classList.contains('modal-close-path')){
-        event.target.parentNode.parentNode.parentNode.remove();
-        bodyM.classList.remove('lock');
+        
+        setTimeout(() => closeModal(event.target.parentNode.parentNode.parentNode), 800)
+        
     }
 });
+
+function closeModal(tar){
+    tar.remove()
+    bodyM.classList.remove('lock');
+}
