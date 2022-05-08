@@ -58,11 +58,12 @@ h1, h2, h3, h4, h5, h6{font-size: inherit;font-weight: 400;}
 /* ////////////////////////////////// Styles ///////////////////////////////// */
 
 body {
-    font-family: 'Raleway', 'Comfortaa';
+    font-family: "Raleway", "Comfortaa";
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 /* Стилизация навбара */
@@ -76,7 +77,7 @@ body {
     height: 70px;
 }
 
-.menu-wrapper{
+.menu-wrapper {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -134,19 +135,62 @@ body {
    transition: 0.25s;
 }
 
-.search{
+.search {
+    display: flex;
     margin: 0 40px 0 0;
 }
 
-.search-btn{
+.search-btn {
     height: 24px;
     fill: white;
+    margin: auto 0 auto 20px;
 }
 
-.search-btn:hover{
+.search-field {
+    width: 203px;
+    overflow-x: hidden;
+    animation: closeInput .8s ease both;
+}
+
+@keyframes closeInput {
+    0%{
+        width: 203px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+
+.search-field.open-input {
+    animation: openInput .8s ease both;
+}
+
+@keyframes openInput {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 203px;
+    }
+}
+
+.search-btn:hover {
     cursor: pointer;
     fill: rgb(252, 120, 3);
     transition: .25s ease;
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border-radius: 10px;
+    font-size: 16px;
+    height: 32px;
+    padding: 0 4px;
+    font-family: "Comfortaa";
 }
 
 .menu__item-link, .logo__link, .menu__item_dropdown {
@@ -322,17 +366,18 @@ body {
 
 /* полоса прокрутки на выподающем меню */
 .menu__item-dropdown-list::-webkit-scrollbar{
-    width:4px; /* ширина для вертикального скролла */
+    width: 4px; /* ширина для вертикального скролла */
     height: 2px; /* высота для горизонтального скролла */
     color: white;
 }
 .menu__item-dropdown-list::-webkit-scrollbar-thumb{
     background-color: black;
+    border-radius: 10px;
 }
 
 /* полоса прокрутки (скроллбар) */
 ::-webkit-scrollbar {
-    width: 6px; /* ширина для вертикального скролла */
+    width: 5px; /* ширина для вертикального скролла */
     height: 2px; /* высота для горизонтального скролла */
     background-color: white;
 }
@@ -340,6 +385,7 @@ body {
 /* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
     background-color: black;
+    border-radius: 10px;
 }
 /* Конец настройки скроллов */
 /* стилизация бургера */
@@ -381,9 +427,7 @@ body {
     height: 100vh;
     width: 100%;
     padding: 80px 0 0 0;
-    animation-duration: 10s;
-    animation-name: pulse;
-    animation-iteration-count: infinite;
+    animation:pulse 10s infinite;
 }
 
   
@@ -418,8 +462,8 @@ h2 {
     font-weight: 700;
 }
 /* Конец стилизации слогана */
-/* Ссылки по сайту */
 
+/* Ссылки по сайту */
 .container__dumplings-navigation {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -428,6 +472,7 @@ h2 {
     width: 100%;
     padding: 30px 20px;
     justify-content: center;
+    margin: 30px 0;
 }
 
 .container__dumpling {
@@ -798,7 +843,7 @@ h2 {
 }
 
 .footer-wrapper__real-copyright{
-    color:cornflowerblue ;
+    color: rgb(252, 120, 3) ;
 }
 
 /* Модальное окно */
@@ -812,6 +857,7 @@ h2 {
     background-color:rgba(121, 123, 136, 0.9);
     z-index: 100;
     overflow-y: auto;
+    animation: modalView .8s;
 }
 
 .modal-content {
@@ -832,16 +878,26 @@ h2 {
     fill: red;
 }
 
-.modal-wrapper {
-    animation: modalView 1s;
-}
-
 @keyframes modalView{
     0%{
         opacity: 0;
     }
     100%{
         opacity: 1;
+    }
+}
+
+.modal-wrapper.modalClose {
+    animation: modalClose .8s;
+}
+
+@keyframes modalClose {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
@@ -908,9 +964,10 @@ h2 {
     width: 820px;
     border-top: 2px solid #d9d9d9;
     padding: 20px 30px;
+    text-align: justify;
 }
 
-/* Конец модального окна*/
+/* Конец модального окна */
 
 body.lock{
     overflow: hidden;
@@ -971,6 +1028,30 @@ body.lock{
     
     .slider-container{
         margin: 0 20px !important;
+    }
+
+    /* Адаптация модального окна */
+
+    .modal-image {
+        height: 330px;
+        width: 380px;
+        margin-left: 15px;
+    }
+    
+    .modal-name {
+        font-size: 40px;
+        margin: 0 40px 0 0;
+        text-align: center;
+    }
+    
+    .all-ingredient {
+        font-size: 18px;
+        width: 600px;
+    }
+    
+    .modal-information-text {
+        font-size: 18px;
+        width: 620px;
     }
 } 
 
@@ -1058,6 +1139,39 @@ body.lock{
 
     .menu__item, .menu__item-dropdownli {
         margin: 0 10px;
+    }
+
+    /* Адаптация модального окна */
+
+    .modal-image {
+        height: 350px;
+        width: 400px;
+        margin: 30px 0;
+    }
+    
+    .modal-name {
+        font-size: 35px;
+        margin: 0;
+    }
+
+    .parts-of-recipe {
+        font-size: 24px;
+    }
+    
+    .modal-content__img-name {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .all-ingredient {
+        font-size: 16px;
+        width: 550px;
+    }
+
+    .modal-information-text {
+        font-size: 16px;
+        width: 520px;
+        padding: 15px 25px;
     }
 
 }
@@ -1269,13 +1383,47 @@ body.lock{
         display: none;
     }
 
+    /* Адаптация модального окна */
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .modal-image {
+        height: 350px;
+        width: 400px;
+        border-radius: 5%;
+    }
     
+    .modal-name {
+        font-size: 32px;
+    }
+        
+    .all-ingredient {
+        font-size: 14px;
+        width: 400px;
+    }
+    
+    .parts-of-recipe {
+        padding: 30px 0;
+    }
+    
+    .modal-information-text {
+        font-size: 14px;
+        width: 420px;
+        border-top: 2px solid #d9d9d9;
+        padding: 20px 30px;
+        text-align: justify;
+    }
 } 
 @media (max-width:576px) {
 
     .footer-wrapper{
         flex-direction: column-reverse;
     }
+
+    /* Адаптация блока навигации и его наполнения */
 
     .container__dumplings-navigation {
         display: grid;
@@ -1337,4 +1485,129 @@ body.lock{
         grid-column: 6/11;
         grid-row: 5/6;
     }
+
+    /* Адаптация модального окна */
+
+    .modal-close {
+        top: 6px;
+        right: 6px;
+    }
+
+    .modal-image {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .modal-name {
+        font-size: 28px;
+    }
+        
+    .all-ingredient {
+        font-size: 14px;
+        width: 350px;
+    }
+    
+    .parts-of-recipe {
+        padding: 30px 0;
+    }
+    
+    .modal-information-text {
+        font-size: 14px;
+        width: 350px;
+        border-top: 2px solid #d9d9d9;
+        padding: 20px 10px;
+        text-align: justify;
+    }
+
+    /* Адаптация сколлбара */
+    ::-webkit-scrollbar {
+        width: 0px; /* ширина для вертикального скролла */
+        height: 2px; /* высота для горизонтального скролла */
+        background-color: white;
+    }
+}
+
+
+.preloader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #E3CEB7;
+    z-index: 1000;
+    transition: all .3s ease-out;
+}
+
+.preloader_hide {
+    opacity:0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.preloader__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    transform: translate(-50%,-50%);
+}
+
+@keyframes ldio-e1xxnbsoso {
+    0% { transform: translate(-50%,-50%) rotate(0deg); }
+    100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.ldio-e1xxnbsoso div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 10px solid  rgba(252, 120, 3,0.45);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: ldio-e1xxnbsoso 1s linear infinite;
+    top: 100px;
+    left: 100px;
+    box-sizing: content-box; 
+}
+
+.loadingio-spinner-rolling-9izsnfva8xm {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+ }
+.ldio-e1xxnbsoso {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; 
+}
+/* generated by https://loading.io/ */
+
+.container-tricks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+
+.container-tricks__item {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    margin: 50px 50px;
+    padding: 0 20px;
+    background-color: rgba(77, 74, 74, 0.65);
+    border-radius: 40px;
+}
+
+.container-tricks__item p {
+    font-size: 20px;
+    text-align: center;
+    color: white;
 }
