@@ -99,24 +99,21 @@ sliders.addEventListener('click', (event) => {
 document.addEventListener('keyup', (event) => {
     if(event.code=='Escape' && bodyM.classList.contains('lock')){
         document.querySelector('.modal-wrapper').classList.add('modalClose');
-        setTimeout(()=>closeModal(document.querySelector('.modal-wrapper')),800);
+        setTimeout(()=>closeModal(document.querySelector('.modal-wrapper')),600);
     }
 })
 
 bodyM.addEventListener('click', (event) => {
     if(event.target.classList.contains('modal-close')){
         document.querySelector('.modal-wrapper').classList.add('modalClose');
-        setTimeout(() => closeModal(event.target.parentNode.parentNode),800);
-        
+        setTimeout(() => closeModal(event.target.parentNode.parentNode),600);
     }
     if(event.target.classList.contains('modal-close-path')){
-        
-        setTimeout(() => closeModal(event.target.parentNode.parentNode.parentNode), 800)
-        
+        setTimeout(() => closeModal(event.target.parentNode.parentNode.parentNode), 600);        
     }
 });
 
 function closeModal(tar){
-    tar.remove()
+    tar.remove();
     bodyM.classList.remove('lock');
 }
