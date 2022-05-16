@@ -135,21 +135,28 @@ body {
    transition: 0.25s;
 }
 
+mark {
+    background-color: #D3D930;
+}
+
 .search {
     display: flex;
     margin: 0 40px 0 0;
+    position: relative;
 }
 
 .search-btn {
     height: 24px;
-    fill: white;
+    fill: #F5E6DA;
     margin: auto 0 auto 20px;
 }
 
 .search-field {
+    display: flex;
+    align-items: center;
     width: 203px;
     overflow-x: hidden;
-    animation: closeInput .8s ease both;
+    animation: closeInput .7s ease both;
 }
 
 @keyframes closeInput {
@@ -162,7 +169,7 @@ body {
 }
 
 .search-field.open-input {
-    animation: openInput .8s ease both;
+    animation: openInput .7s ease both;
 }
 
 @keyframes openInput {
@@ -174,15 +181,35 @@ body {
     }
 }
 
+.search-results {
+    position: absolute;
+    top: 51px;
+    right: 4px;
+    width: 283px;
+    background-color:#F5E6DA;
+    max-height: 200px;
+    overflow-y: auto;
+    font-family: "Comfortaa";
+    font-size: 14px;
+}
+
+.search-results div {
+    min-height: 50px;
+    margin: 0 20px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding: 18px 0;
+    cursor: pointer;
+}
+
+.search-results div:last-child {
+    border-bottom: 0px;
+}
+
 .search-btn:hover {
     cursor: pointer;
     fill: rgb(252, 120, 3);
     transition: .25s ease;
-}
-
-.search-field {
-    display: flex;
-    align-items: center;
 }
 
 .search-input {
@@ -190,6 +217,7 @@ body {
     font-size: 16px;
     height: 32px;
     padding: 0 4px;
+    background-color: #F5E6DA;
     font-family: "Comfortaa";
 }
 
@@ -481,6 +509,7 @@ h2 {
     margin: 15px auto ;
     position: relative;
     transition: .2s;
+    cursor: pointer;
 }
 
 .container__dumpling:hover .blur-image {
@@ -610,6 +639,7 @@ h2 {
     height: 190px;
     max-width: 240px;
     margin: 25px auto;
+    cursor: pointer;
 }
 
 /* Кнопки слайдера */
@@ -625,6 +655,7 @@ h2 {
     right: 20px;
     top: calc(50% - 20px) ;
     transition: .4s ease;
+    cursor: pointer;
 }
 
 .btn-prev {
@@ -639,6 +670,7 @@ h2 {
     left: 20px;
     top: calc(50% - 20px);
     transition: .4s ease;
+    cursor: pointer;
 }
 
 @media(max-width:1690px) {
@@ -888,7 +920,7 @@ h2 {
 }
 
 .modal-wrapper.modalClose {
-    animation: modalClose .8s;
+    animation: modalClose .5s both;
 }
 
 @keyframes modalClose {
@@ -993,22 +1025,69 @@ body.lock{
         margin: 0 20px 0 auto;
     }
 
+    .search-field {
+        position: relative;
+        width: 0;
+        overflow-x: visible;
+    }
+    
+    @keyframes closeInput {
+        0%{
+            width: 0px;
+        }
+        100%{
+            width: 0px;
+        }
+    }
+
+    @keyframes openInput {
+        0%{
+            width: 0px;
+        }
+        100%{
+            width: 0px;
+        }
+    }
+
+    .search-input {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        transition: all 0.3s;
+        height: 0%;
+    }
+
+    .search-results {
+        position: absolute;
+        top: 80px;
+        right: -30px;
+        width: 263px;
+    }
+
+    .search-results div {
+        font-size: 16px;
+    }
+
+    .search-field.open-input .search-input {
+        height: 100%;
+    }
+
+    /* Адаптация слайдера */
     .container-item {
         width: 25%; 
     }
-
+    /* Конец адаптации слайдера */
     /* Адаптация навигационой панельки */
-
     .container__dumplings-navigation {
         row-gap: 15px;
     }
 
     .container__dumpling {
-    height: 165px;
-    width: 195px;
-    margin: 15px auto ;
-    position: relative;
-    transition: .2s;
+        height: 165px;
+        width: 195px;
+        margin: 15px auto ;
+        position: relative;
+        transition: .2s;
     }
     
     .container__dumpling:hover{
@@ -1023,15 +1102,11 @@ body.lock{
         padding: 10px 0;
         top: calc(50% - 12px) ;
     }
-
     /* Конец адаптации навигации */
-    
     .slider-container{
         margin: 0 20px !important;
     }
-
     /* Адаптация модального окна */
-
     .modal-image {
         height: 330px;
         width: 380px;
