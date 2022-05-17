@@ -1,3 +1,12 @@
+let searchLinks
+async function open() {
+    // HTTPRequest запрос к серверу
+    let response = await fetch('json/data-links.json');
+    //Получаем результат у сервера
+    searchLinks = await response.json();
+}
+open();
+
 // Функция задержки
 function debounce(f,ms){
     let isCooldown = false;
@@ -29,6 +38,9 @@ window.addEventListener('scroll', () => {
 function toggleDropMenu(){
     dropdown.classList.toggle('active');
     dropdown.classList.toggle('inactive');
+    if(inpFilterField.classList.contains('open-input')){
+        toggleSearch();
+    }
 }
 
 //
@@ -71,9 +83,17 @@ let inpFilterField = document.querySelector('.search-field');
 let filterResults = document.querySelector('.search-results');
 document.querySelector('.search-btn').addEventListener('click',(event) => {
     searchView();
+    if(dropdown.classList.contains('active')){
+        dropdown.classList.toggle('active');
+        dropdown.classList.toggle('inactive');
+    }
 });
 document.querySelector('.search-btn-path').addEventListener('click',(event) => {
     searchView();
+    if(dropdown.classList.contains('active')){
+        dropdown.classList.toggle('active');
+        dropdown.classList.toggle('inactive');
+    }
 });
 
 function toggleSearch(){
@@ -124,50 +144,7 @@ filterResults.addEventListener('click',(e)=>{
     }
 });
 
-let searchLinks = {
-    0: ["пельмени","#slider-container-pelm"],
-    1: ["курзе","#slider-container-kurze"],
-    2: ["вареники","#slider-container-vareniki"],
-    3: ["вонтоны","#slider-container-wonton"],
-    4: ["манты","#slider-container-manti"],
-    5: ["хинкали","#slider-container-khinkali"],
-    6: ["чучвара","#slider-container-chuchvara"],
-    7: ["дим-самы","#slider-container-dimsam"],
-    8: ["гётза","#slider-container-gyoza"],
-    9: ["баоцзы","#slider-container-baozi"],
-    10: ["пельмени с яблоками",".item-pelm-apple"],
-    11: ["пельмени с курицей",".item-pelm-chiken"],
-    12: ["пельмени с рыбой",".item-pelm-fish"],
-    13: ["пельмени с зеленым луком",".item-pelm-green-luk"],
-    14: ["пельмени с сырыми грибами",".item-pelm-gribi-sirie"],
-    15: ["пельмени с морковью",".item-pelm-carrot"],
-    16: ["пельмени с солеными грибами",".item-pelm-gribi-solenie"],
-    17: ["пельмени с солеными грибами",".item-pelm-gribi-sushenie"],
-    18: ["пельмени с кальмарами",".item-pelm-kalmar"],
-    19: ["пельмени с капустой",".item-pelm-kapusta"],
-    20: ["пельмени с крапивой",".item-pelm-krapiva"],
-    21: ["пельмени с снытьей",".item-pelm-krapiva-snitia"],
-    22: ["пельмени по челябински",".item-pelm-meat-egg"],
-    23: ["пельмени мясорыбные",".item-pelm-meat-fish"],
-    24: ["пельмени мясоморковные",".item-pelm-meat-morkov"],
-    25: ["пельмени с питиками",".item-pelm-pistiki"],
-    26: ["пельмени по таганайски",".item-pelm-po-taganaiski"],
-    27: ["пельмени с картошкой",".item-pelm-potato"],
-    28: ["пельмени по мензелински",".item-pelm-potato-po-menzelinski"],
-    29: ["пельмени по златоустовски",".item-pelm-po-zlatoustovski"],
-    30: ["пельмени с редькой",".item-pelm-redika"],
-    31: ["пельмени по шемахински",".item-pelm-redika-po-shemashinski"],
-    32: ["пельмени с репой",".item-pelm-repa-meat"],
-    33: ["пельмени с щавелем",".item-pelm-shavel"],
-    34: ["пельмени сибирские",".item-pelm-siberian"],
-    35: ["пельмени по китайски",".item-pelm-kapusta-po-chinese"],
-    36: ["пельмени с птицей",".item-pelm-meat-borovoi"],
-    37: ["пельмени по каргалински",".item-pelm-svekla-po-kargalinski"],
-    38: ["пельмени с тыквой",".item-pelm-tikva"],
-    39: ["пельмени тыкво-морковные",".item-pelm-tikva-carrot"],
-    40: ["пельмени уральские",".item-pelm-uraliski"]    
-    //пельмени все
-}
+ 
 //
 
 // Функция троттлинга
